@@ -22,6 +22,8 @@
     # ./nvim.nix
   ];
 
+  colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
+
   nixpkgs = {
     # You can add overlays here
     overlays = [
