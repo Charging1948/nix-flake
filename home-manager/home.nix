@@ -16,7 +16,7 @@
     # Or modules exported from other flakes (such as nix-colors):
     inputs.nix-colors.homeManagerModules.default
 
-    ./features/alacritty.nix
+    ./features
     # ./features/mako.nix
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
@@ -58,7 +58,6 @@
 
   # Add stuff for your user as you see fit:
   home.packages = with pkgs; [
-    steam
     firefox
     spotify
     (discord.override {

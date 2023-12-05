@@ -72,14 +72,12 @@
     auto-optimise-store = true;
   };
 
-
   # TODO: Set your hostname
   networking.hostName = "protean";
 
   # TODO: This is just an example, be sure to use whatever bootloader you prefer
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -101,6 +99,13 @@
     LC_TELEPHONE = "de_DE.UTF-8";
     LC_TIME = "de_DE.UTF-8";
   };
+
+  # Add Fonts
+  fonts.packages = with pkgs; [
+    (nerdfonts.override {
+      fonts = ["FiraCode" "CascadiaCode" "IBMPlexMono" "Iosevka" "IosevkaTerm" "JetBrainsMono" "RobotoMono" "Terminus"];
+    })
+  ];
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -140,7 +145,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
-
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
