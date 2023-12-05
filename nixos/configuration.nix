@@ -117,8 +117,10 @@
   programs.hyprland = {
     enable = true;
     enableNvidiaPatches = true;
-    xwayland = true;
+    xwayland.enable = true;
   };
+
+  xdg.portal.enable = true;
 
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
