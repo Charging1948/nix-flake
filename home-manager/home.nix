@@ -14,8 +14,10 @@
     # outputs.homeManagerModules.example
 
     # Or modules exported from other flakes (such as nix-colors):
-    # inputs.nix-colors.homeManagerModules.default
+    inputs.nix-colors.homeManagerModules.default
 
+    ./features/alacritty.nix
+    # ./features/mako.nix
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
   ];
@@ -53,13 +55,17 @@
   };
 
   # Add stuff for your user as you see fit:
-  home.packages = with pkgs; [steam firefox];
+  home.packages = with pkgs; [steam firefox spotify];
 
   # Enable home-manager and git
   programs = {
     neovim.enable = true;
     home-manager.enable = true;
-    git.enable = true;
+    git = {
+      enable = true;
+      userName = "jk";
+      userEmail = "joachim.dev@pm.me";
+    };
   };
 
   # Nicely reload system units when changing configs
