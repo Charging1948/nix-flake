@@ -57,7 +57,15 @@
   };
 
   # Add stuff for your user as you see fit:
-  home.packages = with pkgs; [steam firefox spotify];
+  home.packages = with pkgs; [
+    steam
+    firefox
+    spotify
+    (discord.override {
+      withOpenASAR = true;
+      withVencord = true;
+    })
+  ];
 
   # Enable home-manager and git
   programs = {
