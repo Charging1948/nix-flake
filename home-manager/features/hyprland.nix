@@ -9,8 +9,4 @@
     enableNvidiaPatches = true;
     xwayland = true;
   };
-
-  hardware = {
-    opengl.enable = true;
-  };
 }

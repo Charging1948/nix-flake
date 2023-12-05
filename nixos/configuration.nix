@@ -119,6 +119,10 @@
     NIXOS_OZONE_WL = "1";
   };
 
+  hardware = {
+    opengl.enable = true;
+  };
+
   # Configure keymap in X11
   services.xserver = {
     layout = "de";
