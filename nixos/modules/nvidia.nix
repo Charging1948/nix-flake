@@ -19,7 +19,7 @@
       system.nixos.tags = ["high-performance"];
       hardware.nvidia.prime = {
         reverseSync.enable = lib.mkForce false;
-        prime.sync.enable = lib.mkForce true;
+        sync.enable = lib.mkForce true;
       };
     };
   };
