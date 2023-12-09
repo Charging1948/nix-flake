@@ -132,6 +132,10 @@
     libreoffice-qt
     hunspell
     hunspellDicts.de_DE
+    gnomeExtensions.gsconnect
+    gnomeExtensions.espresso
+    gnomeExtensions.vim-alt-tab
+    signal-desktop
   ];
 
   hardware = {
