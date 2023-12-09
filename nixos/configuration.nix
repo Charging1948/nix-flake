@@ -128,6 +128,12 @@
     NIXOS_OZONE_WL = "1";
   };
 
+  environment.systemPackages = with pkgs; [
+    libreoffice-qt
+    hunspell
+    hunspellDicts.de_DE
+  ];
+
   hardware = {
     opengl.enable = true;
   };
