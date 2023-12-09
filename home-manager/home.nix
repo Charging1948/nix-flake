@@ -10,6 +10,7 @@
 }: {
   # You can import other home-manager modules here
   imports = [
+    inputs.nixvim.homeManagerModules.nixvim
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
 
@@ -17,7 +18,6 @@
     inputs.nix-colors.homeManagerModules.default
 
     ./features
-    # ./features/mako.nix
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
   ];
