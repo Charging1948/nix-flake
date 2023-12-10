@@ -6,6 +6,7 @@
 }: {
   programs.nixvim = {
     enable = true;
+    
     colorschemes.catppuccin.enable = true;
     options = {
       number = true; # Show line numbers
