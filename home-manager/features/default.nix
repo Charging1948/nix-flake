@@ -9,7 +9,6 @@
     ./alacritty.nix
     ./nixvim.nix
     ./zsh.nix
-    ./steam.nix
     ./lazygit.nix
     ./starship.nix
   ];
