@@ -2,6 +2,7 @@
   pkgs,
   config,
   lib,
+  home,
   ...
 }: {
   programs.zsh = {
@@ -19,8 +20,14 @@
         "zoxide"
         "magic-enter"
         "colored-man-pages"
-        "podman"
       ];
     };
   };
+
+  home.packages = with pkgs; [
+    fzf
+    thefuck
+    zoxide
+    direnv
+  ];
 }
