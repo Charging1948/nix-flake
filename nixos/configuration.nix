@@ -71,6 +71,8 @@
     experimental-features = "nix-command flakes";
     # Deduplicate and optimize nix store
     auto-optimise-store = true;
+    substituters = ["https://nix-gaming.cachix.org"];
+    trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
   };
 
   # TODO: Set your hostname
@@ -136,6 +138,8 @@
     gnomeExtensions.espresso
     gnomeExtensions.vim-alt-tab
     signal-desktop
+    inputs.nix-gaming.packages.${pkgs.system}.rocket-league
+    inputs.nix-gaming.packages.${pkgs.system}.proton-ge
   ];
 
   hardware = {
@@ -145,7 +149,7 @@
   # Configure keymap in X11
   services.xserver = {
     layout = "de";
-    xkbVariant = "";
+    xkbVariant = "nodeadkeys";
   };
 
   # Configure console keymap

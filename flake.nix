@@ -15,6 +15,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-gaming.url = "github:fufexan/nix-gaming";
+
     # TODO: Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
 
