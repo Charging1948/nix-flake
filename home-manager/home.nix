@@ -68,7 +68,6 @@
 
   # Enable home-manager and git
   programs = {
-    neovim.enable = true;
     home-manager.enable = true;
     git = {
       enable = true;
