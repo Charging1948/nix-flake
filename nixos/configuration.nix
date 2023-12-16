@@ -139,6 +139,7 @@
     gnomeExtensions.espresso
     gnomeExtensions.vim-alt-tab
     signal-desktop
+    unstable.discord-screenaudio
     inputs.nix-gaming.packages.${pkgs.system}.rocket-league
     inputs.nix-gaming.packages.${pkgs.system}.proton-ge
   ];
