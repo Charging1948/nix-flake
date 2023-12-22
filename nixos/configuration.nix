@@ -141,6 +141,7 @@
     gnomeExtensions.gsconnect
     gnomeExtensions.espresso
     gnomeExtensions.vim-alt-tab
+    gnomeExtensions.appindicator
     signal-desktop
     unstable.discord-screenaudio
     unstable.scanmem
@@ -186,6 +187,8 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
+
+  services.udev.packages = with pkgs; [gnome.gnome-settings-daemon];
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
