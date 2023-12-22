@@ -24,6 +24,7 @@
     # ./users.nix
     ./modules/nvidia.nix
     ./modules/steam.nix
+    ./modules/gnome.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./home-manager-configuration.nix
@@ -117,10 +118,6 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
   programs.hyprland = {
     enable = true;
     enableNvidiaPatches = true;
@@ -138,10 +135,6 @@
     libreoffice-qt
     hunspell
     hunspellDicts.de_DE
-    gnomeExtensions.gsconnect
-    gnomeExtensions.espresso
-    gnomeExtensions.vim-alt-tab
-    gnomeExtensions.appindicator
     signal-desktop
     unstable.discord-screenaudio
     unstable.scanmem
@@ -187,8 +180,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
-
-  services.udev.packages = with pkgs; [gnome.gnome-settings-daemon];
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
