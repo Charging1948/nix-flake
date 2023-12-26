@@ -25,6 +25,7 @@
     ./modules/nvidia.nix
     ./modules/steam.nix
     ./modules/gnome.nix
+    ./modules/waydroid.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./home-manager-configuration.nix
