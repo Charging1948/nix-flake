@@ -38,7 +38,6 @@
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     xwayland.enable = true;
     systemd.enable = true;
-    enableNvidiaPatches = true;
     settings = {
       "$mod" = "SUPER";
       bind =
