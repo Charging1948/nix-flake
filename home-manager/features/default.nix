@@ -8,6 +8,7 @@
     ./tmux.nix
     ./alacritty.nix
     ./hyprland.nix
+    ./kitty
     ./nixvim.nix
     ./zsh.nix
     ./lazygit.nix
