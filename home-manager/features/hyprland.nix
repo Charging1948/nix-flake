@@ -80,7 +80,8 @@
 
       misc = {
         # disable auto polling for config file changes
-        disable_autoreload = true;
+        # TODO: Enable after done with testing
+        # disable_autoreload = true;
 
         force_default_wallpaper = 0;
 
