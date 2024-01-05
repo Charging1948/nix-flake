@@ -27,6 +27,7 @@
     ./modules/gnome.nix
     ./modules/waydroid.nix
     ./modules/jetbrains.nix
+    ./modules/razer.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./home-manager-configuration.nix

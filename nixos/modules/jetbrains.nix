@@ -12,7 +12,6 @@ let jetbrains-idea-config = {
   extensions = [
     "ideavim"
     "github-copilot"
-    "nixidea"
   ];
 };
 in 
