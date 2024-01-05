@@ -22,7 +22,6 @@
       comment-nvim = {
         enable = true;
       };
-
       dap = {
         enable = true;
       };
