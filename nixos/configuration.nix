@@ -26,6 +26,7 @@
     ./modules/steam.nix
     ./modules/gnome.nix
     ./modules/waydroid.nix
+    ./modules/jetbrains.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./home-manager-configuration.nix
@@ -139,6 +140,8 @@
     signal-desktop
     unstable.discord-screenaudio
     unstable.scanmem
+    xclip
+    wl-clipboard
     inputs.nix-gaming.packages.${pkgs.system}.rocket-league
   ];
 
