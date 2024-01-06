@@ -1,12 +1,8 @@
+{lib, config, ...}:
 {
-  lib,
-  config,
-  ...
-}: {
   imports = [
     ./kitty
     ./alacritty.nix
-    ./default.nix
     ./hyprland.nix
     ./hyprbars.nix
     ./lazygit.nix
