@@ -116,13 +116,11 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-    programs.hyprland = {
+  programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
-
-  xdg.portal.enable = true;
 
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
