@@ -1,6 +1,7 @@
 {lib, config, ...}:
 {
   imports = [
+    ./desktop/common
     ./kitty
     ./alacritty.nix
     ./lazygit.nix
