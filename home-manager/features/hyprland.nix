@@ -225,33 +225,31 @@ in {
       # ) (lib.filter (m: m.enabled && m.workspace != null) config.monitors);
 
     };
-    # This is order sensitive, so it has to come here.
-    extraConfig = ''
-      # Passthrough mode (e.g. for VNC)
-      bind=SUPER,P,submap,passthrough
-      submap=passthrough
-      bind=SUPER,P,submap,reset
-      submap=reset
-    '';
-  };
     plugins = with inputs.hyprland-plugins.packages.${pkgs.system}; [
       # borders-plus-plus
       csgo-vulkan-fix
       hyprwinwrap
     ];
+    # This is order sensitive, so it has to come here.
     extraConfig = ''
-    plugin {
-      csgo-vulkan-fix {
-        res_w = 1280
-        res_h = 800
-        class = cs2
+      plugin {
+        csgo-vulkan-fix {
+          res_w = 1280
+          res_h = 800
+          class = cs2
+        }
       }
-    }
-  '';
+
+      # Passthrough mode (e.g. for VNC)
+      bind=SUPER,P,submap,passthrough
+      submap=passthrough
+      bind=SUPER,P,submap,reset
+      submap=reset
+
+    '';
   };
 
-  # Fix issues with cursor and themes under Wayland
-
+  # Prevent issues with cursor and themes under Wayland
   home.pointerCursor = {
     gtk.enable = true;
     # x11.enable = true;
