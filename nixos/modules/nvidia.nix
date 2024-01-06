@@ -7,7 +7,10 @@
   hardware.nvidia = {
     modesetting.enable = true;
     prime = {
-      offload.enable = true;
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
       reverseSync.enable = lib.mkDefault true;
       allowExternalGpu = lib.mkDefault false;
       intelBusId = "PCI:0:2:0";
