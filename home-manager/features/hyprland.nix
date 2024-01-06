@@ -9,8 +9,8 @@ let hypr_term = "kitty";
 in {
 
   xdg.portal = {
-    extraPortals = [ pkgs.inputs.hyprland.xdg-desktop-portal-hyprland ];
-    configPackages = [ pkgs.inputs.hyprland.hyprland ];
+    extraPortals = [ inputs.hyprland.xdg-desktop-portal-hyprland ];
+    configPackages = [ inputs.hyprland.hyprland ];
   };
 
   home.packages = with pkgs; [
