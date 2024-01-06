@@ -8,13 +8,9 @@
 let hypr_term = "kitty";
 in {
 
-  xdg.portal = {
-    extraPortals = [ inputs.hyprland.xdg-desktop-portal-hyprland ];
-    configPackages = [ inputs.hyprland.hyprland ];
-  };
 
   home.packages = with pkgs; [
-    inputs.hyprwm-contrib.grimblast
+    inputs.hyprwm-contrib.packages.${pkgs.system}.grimblast
     hyprslurp
     hyprpicker
   ];
@@ -143,7 +139,7 @@ in {
         #   pass = config.programs.password-store.package;
         # }}/bin/pass-wofi";
 
-        grimblast = "${pkgs.inputs.hyprwm-contrib.grimblast}/bin/grimblast";
+        grimblast = "${inputs.hyprwm-contrib.packages.${pkgs.system}.grimblast}/bin/grimblast";
         pactl = "${pkgs.pulseaudio}/bin/pactl";
         tly = "${pkgs.tly}/bin/tly";
         gtk-play = "${pkgs.libcanberra-gtk3}/bin/canberra-gtk-play";

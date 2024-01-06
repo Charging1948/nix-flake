@@ -250,9 +250,10 @@ in
     # x y -> vertical, horizontal
     # x y z -> top, horizontal, bottom
     # w x y z -> top, right, bottom, left
+    # TODO: Add next line back into global * when implementing font config:
+    # font-family: ${config.fontProfiles.regular.family}, ${config.fontProfiles.monospace.family};
     style = let inherit (config.colorScheme) colors; in /* css */ ''
       * {
-        /*font-family: ${config.fontProfiles.regular.family}, ${config.fontProfiles.monospace.family};*/
         font-size: 12pt;
         padding: 0;
         margin: 0 0.4em;
