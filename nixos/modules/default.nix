@@ -6,6 +6,7 @@
   ...
 }: {
   imports = [
+    # ./desktop/common
     ./gnome.nix
     ./jetbrains.nix
     ./nvidia.nix

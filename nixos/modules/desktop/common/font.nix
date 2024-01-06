@@ -1,5 +1,9 @@
-{ pkgs, config, ... }: {
-  config.fontProfiles = {
+{ pkgs, config, ... }:
+
+let
+  cfg = config.fontProfiles;
+in {
+  cfg = {
     enable = true;
     monospace = {
       family = "FiraCode Nerd Font";
