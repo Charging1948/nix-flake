@@ -6,4 +6,5 @@
   # example = pkgs.callPackage ./example { };
   tly = pkgs.callPackage ./tly { };
   hyprslurp = pkgs.callPackage ./hyprslurp { };
+  nvidia-offload = pkgs.callPackage ./nvidia-offload { };
 }

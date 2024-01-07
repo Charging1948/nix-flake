@@ -18,6 +18,8 @@
     };
   };
 
+  environment.systemPackages = with pkgs; [ nvidia-offload ];
+
   specialisation = {
     high-performance.configuration = {
       system.nixos.tags = ["high-performance"];
