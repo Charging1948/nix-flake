@@ -17,6 +17,8 @@
     impatience
     clipboard-indicator
     trimmer
+    x11-gestures
+    pkgs.touchegg
   ];
   services.udev.packages = with pkgs; [gnome.gnome-settings-daemon];
 }
