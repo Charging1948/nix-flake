@@ -13,5 +13,4 @@
     # ./slack.nix
     # ./sublime-music.nix
   ];
-  xdg.portal.enable = true;
 }

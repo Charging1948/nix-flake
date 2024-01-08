@@ -11,9 +11,9 @@
     powerManagement.enable = lib.mkDefault true;
     powerManagement.finegrained = lib.mkDefault false;
     prime = {
-      offload = {
-        enable = lib.mkDefault false;
-        enableOffloadCmd = lib.mkDefault false;
+      offload = let mkOptional = lib.mkOverride 500; in {
+        enable = mkOptional false;
+        enableOffloadCmd = mkOptional false;
       };
       reverseSync.enable = lib.mkDefault true;
       sync.enable = lib.mkDefault false;
@@ -28,15 +28,15 @@
   specialisation = {
 
     # Enable Sync Mode for maximum performance
-
-    # Enable Sync Mode for maximum performance
-    high-performance.configuration = {
+    high-performance.configuration = let
+      mkAlmostForce = lib.mkOverride 102;
+    in {
       system.nixos.tags = ["high-performance"];
       hardware.nvidia.prime = with lib; {
-        offload.enable = mkForce false;
-        reverseSync.enable = mkForce false;
-        sync.enable = mkForce true;
+        reverseSync.enable = mkAlmostForce false;
+        sync.enable = mkAlmostForce true;
       };
+      powerManagement.cpuFreqGovernor = lib.mkForce "performance";
     };
 
     # Completely disable nvidia card to save battery.
