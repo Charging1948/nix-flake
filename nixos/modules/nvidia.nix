@@ -23,6 +23,7 @@
     };
   };
 
+
   environment.systemPackages = with pkgs; [ nvidia-offload ];
 
   specialisation = {
@@ -32,6 +33,8 @@
       mkAlmostForce = lib.mkOverride 102;
     in {
       system.nixos.tags = ["high-performance"];
+
+      boot.kernelPackages = mkAlmostForce pkgs.linuxPackages_xanmod;
       hardware.nvidia.prime = with lib; {
         reverseSync.enable = mkAlmostForce false;
         sync.enable = mkAlmostForce true;
@@ -44,6 +47,7 @@
       system.nixos.tags = ["on-the-go"];
 
       services.xserver.videoDrivers = lib.mkForce ["i915"];
+      boot.kernelPackages = lib.mkForce pkgs.linuxPackages_zen;
       hardware.nvidia.prime = with lib; {
         offload.enable = mkForce false;
         reverseSync.enable = mkForce false;
