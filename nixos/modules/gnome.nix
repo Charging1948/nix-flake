@@ -13,6 +13,10 @@
     espresso
     vim-alt-tab
     appindicator
+    sound-output-device-chooser
+    impatience
+    clipboard-indicator
+    trimmer
   ];
   services.udev.packages = with pkgs; [gnome.gnome-settings-daemon];
 }
