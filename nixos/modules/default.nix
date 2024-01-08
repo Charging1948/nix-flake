@@ -8,6 +8,7 @@
   imports = [
     # ./desktop/common
     ./gnome.nix
+    ./hardware.nix
     ./jetbrains.nix
     ./nvidia.nix
     ./razer.nix
