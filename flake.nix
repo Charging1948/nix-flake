@@ -15,6 +15,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    devenv.url = "github:cachix/devenv";
+
     nix-gaming.url = "github:fufexan/nix-gaming";
 
     # TODO: Add any other flake you might need

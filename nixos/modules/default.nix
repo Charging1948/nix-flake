@@ -9,7 +9,7 @@
     # ./desktop/common
     ./gnome.nix
     ./hardware.nix
-    ./jetbrains.nix
+    ./development.nix
     ./nvidia.nix
     ./razer.nix
     ./steam.nix
