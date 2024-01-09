@@ -16,4 +16,7 @@
     ./waydroid.nix
     ./wayland-wm.nix
   ];
+  environment.systemPackages = with pkgs; [
+    cachix
+  ];
 }
