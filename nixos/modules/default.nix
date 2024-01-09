@@ -7,6 +7,7 @@
 }: {
   imports = [
     # ./desktop/common
+    ./podman.nix
     ./gnome.nix
     ./hardware.nix
     ./development.nix
