@@ -1,14 +1,15 @@
 {lib, config, ...}:
 {
   imports = [
+    ./cli
     ./kitty
+    ./wayland-wm
     ./alacritty.nix
     ./lazygit.nix
     ./mako.nix
     ./nixvim.nix
     ./starship.nix
     ./tmux.nix
-    ./wayland-wm
     ./zathura.nix
     ./zsh.nix
   ];
