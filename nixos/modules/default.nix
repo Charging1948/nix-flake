@@ -9,6 +9,7 @@
     # ./desktop/common
     ./podman.nix
     ./gnome.nix
+    ./files.nix
     ./hardware.nix
     ./development.nix
     ./nvidia.nix
