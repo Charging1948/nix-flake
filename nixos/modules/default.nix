@@ -16,6 +16,7 @@
     ./steam.nix
     ./waydroid.nix
     ./wayland-wm.nix
+    ./wine.nix
   ];
   environment.systemPackages = with pkgs; [
     cachix
