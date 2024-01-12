@@ -18,6 +18,7 @@
     ./waydroid.nix
     ./wayland-wm.nix
     ./wine.nix
+    ./yubikey.nix
   ];
   environment.systemPackages = with pkgs; [
     cachix
