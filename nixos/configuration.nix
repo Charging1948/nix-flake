@@ -124,6 +124,8 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  programs.zsh.enable = true;
+  programs.fish.enable = true;
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
@@ -187,6 +189,8 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
 
+  users.defaultUserShell = pkgs.zsh;
+
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
     # FIXME: Replace with your username
@@ -200,6 +204,7 @@
       ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = ["wheel"];
+      useDefaultShell = true;
     };
   };
 
