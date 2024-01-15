@@ -15,6 +15,7 @@
     ./nvidia.nix
     ./razer.nix
     ./steam.nix
+    ./vscode.nix
     ./waydroid.nix
     ./wayland-wm.nix
     ./wine.nix
