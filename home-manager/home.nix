@@ -61,10 +61,12 @@
   home.packages = with pkgs; [
     firefox
     spotify
-    (discord.override {
-      withOpenASAR = true;
-      withVencord = true;
-    })
+    unstable.discord-canary
+    unstable.vesktop
+    # (unstable.discord-canary.override {
+    #   withOpenASAR = true;
+    #   withVencord = true;
+    # })
   ];
 
   # Enable home-manager and git
