@@ -21,6 +21,11 @@ in {
         open-vsx.rust-lang.rust-analyzer
         open-vsx.jnoortheen.nix-ide
         open-vsx.mkhl.direnv
+        vscode-marketplace.github.copilot
+        vscode-marketplace.github.copilot-chat
+        vscode-marketplace.ms-vscode-remote.remote-containers
+        # vscode-marketplace.
+        # open-vsx.
       ];
     })
   ];
