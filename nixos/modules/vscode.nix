@@ -4,7 +4,15 @@ let
 in {
   environment.systemPackages = with pkgs; [
     (vscode-with-extensions.override {
-      vscode = vscodium;
+      vscode = (pkgs.vscode.override { isInsiders = true; }).overrideAttrs (oldAttrs: rec {
+        src = (builtins.fetchTarball {
+          url = "https://code.visualstudio.com/sha/download?build=insider&os=linux-x64";
+          sha256 = "0rxd85xgwyszjjziniby867xzrg7mqx81nq7np9j2kdvkhaf992y";
+        });
+        version = "latest";
+
+        buildInputs = oldAttrs.buildInputs ++ [ pkgs.krb5 ];
+      });
       vscodeExtensions = with extensions; [
         open-vsx.asvetliakov.vscode-neovim
         open-vsx.wakatime.vscode-wakatime
