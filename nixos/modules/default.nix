@@ -25,4 +25,5 @@
     cachix
     ungoogled-chromium
   ];
+  services.teamviewer.enable = true;
 }
