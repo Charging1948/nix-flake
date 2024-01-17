@@ -5,7 +5,27 @@
   inputs,
   ...
 }:
-let hypr_term = "kitty";
+let 
+  hypr_term = "kitty";
+  brightnessctl-fixed = with pkgs; writeShellScriptBin "brightnessctl-fixed" ''
+  cur_brightness=''$(${brightnessctl}/bin/brightnessctl g)
+  max_brightness=''$(${brightnessctl}/bin/brightnessctl m)
+    if [ ''$cur_brightness -lt ''$(''$max_brightness / 20) ]; then 
+      if [ ''$0 -eq "up" ]; then
+        ${brightnessctl}/bin/brightnessctl s +5%
+      fi
+      if [ ''$0 -eq "down" ]; then
+        ${brightnessctl}/bin/brightnessctl s 1
+      fi
+    else
+      if [ ''$0 -eq "up" ]; then
+        ${brightnessctl}/bin/brightnessctl s +5%
+      fi
+      if [ ''$0 -eq "down" ]; then
+        ${brightnessctl}/bin/brightnessctl s 5%-
+      fi
+    fi
+  '';
 in {
 
 
@@ -49,7 +69,10 @@ in {
 
         follow_mouse = 1;
         accel_profile = "flat";
-        touchpad.scroll_factor = 0.1;
+        touchpad = {
+          scroll_factor = 0.2;
+          natural_scroll = true;
+        };
       };
 
       dwindle = {
@@ -129,6 +152,14 @@ in {
         ];
       };
 
+      binde = let
+        brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
+      in [
+        # Brightness control
+        ",XF86MonBrightnessUp,exec,${brightnessctl} s +5%"
+        ",XF86MonBrightnessDown,exec,${brightnessctl} s 5%- -n"
+      ];
+
       bind = let
         swaylock = "${config.programs.swaylock.package}/bin/swaylock";
         playerctl = "${config.services.playerctld.package}/bin/playerctl";
@@ -159,9 +190,6 @@ in {
         "SUPER,e,exec,${editor}"
         "SUPER,v,exec,${editor}"
         "SUPER,b,exec,${browser}"
-        # Brightness control (only works if the system has lightd)
-        ",XF86MonBrightnessUp,exec,light -A 10"
-        ",XF86MonBrightnessDown,exec,light -U 10"
         # Volume
         ",XF86AudioRaiseVolume,exec,${pactl} set-sink-volume @DEFAULT_SINK@ +5%"
         ",XF86AudioLowerVolume,exec,${pactl} set-sink-volume @DEFAULT_SINK@ -5%"
@@ -172,7 +200,7 @@ in {
         ",Print,exec,${grimblast} --notify --freeze copy output"
         "SHIFT,Print,exec,${grimblast} --notify --freeze copy active"
         "CONTROL,Print,exec,${grimblast} --notify --freeze copy screen"
-        "SUPER,Print,exec,${grimblast} --notify --freeze copy area"
+        "SUPERSHIFT,s,exec,${grimblast} --notify --freeze copy area"
         "ALT,Print,exec,${grimblast} --notify --freeze copy area"
         # Tally counter
         "SUPER,z,exec,${notify-send} -t 1000 $(${tly} time) && ${tly} add && ${gtk-play} -i dialog-information" # Add new entry
@@ -206,7 +234,24 @@ in {
       (lib.optionals config.programs.wofi.enable [
         "SUPER,x,exec,${wofi} -S drun -x 10 -y 10 -W 25% -H 60%"
         "SUPER,d,exec,${wofi} -S run"
-      ]);
+      ]) ++ 
+
+      # Workspaces
+      # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
+      (builtins.concatLists (builtins.genList (
+            x: let
+              ws = let
+                c = (x + 1) / 10;
+              in
+                builtins.toString (x + 1 - (c * 10));
+            in [
+              "SUPER, ${ws}, workspace, ${toString (x + 1)}"
+              "SUPERSHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+            ]
+          )
+          10)
+      );
+
 
       # monitor = map (m: let
       #   resolution = "${toString m.width}x${toString m.height}@${toString m.refreshRate}";
