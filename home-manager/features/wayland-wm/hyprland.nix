@@ -160,6 +160,12 @@ in {
         ",XF86MonBrightnessDown,exec,${brightnessctl} s 5%- -n"
       ];
 
+      bindm = [
+        # Window Management
+        "SUPER, mouse:272, movewindow"
+        "SUPER, mouse:273, resizewindow"
+      ];
+
       bind = let
         swaylock = "${config.programs.swaylock.package}/bin/swaylock";
         playerctl = "${config.services.playerctld.package}/bin/playerctl";
