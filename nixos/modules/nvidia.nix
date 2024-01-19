@@ -4,7 +4,7 @@
   lib,
   ...
 }: {
-  services.xserver.videoDrivers = lib.mkDefault ["nvidia"];
+  services.xserver.videoDrivers = lib.mkDefault ["intel" "nvidia"];
   hardware.nvidia = {
     modesetting.enable = lib.mkDefault true;
     open = false;
@@ -46,7 +46,7 @@
     on-the-go.configuration = {
       system.nixos.tags = ["on-the-go"];
 
-      services.xserver.videoDrivers = lib.mkForce ["i915"];
+      services.xserver.videoDrivers = lib.mkForce ["intel"];
       boot.kernelPackages = lib.mkForce pkgs.linuxPackages_zen;
       hardware.nvidia.prime = with lib; {
         offload.enable = mkForce false;

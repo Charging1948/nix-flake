@@ -11,5 +11,6 @@
     borderSize = 2;
     textColor = "#${base04}";
     layer = "overlay";
+    defaultTimeout = 5000;
   };
 }
