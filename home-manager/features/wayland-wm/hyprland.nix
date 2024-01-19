@@ -7,27 +7,7 @@
 }:
 let 
   hypr_term = "kitty";
-  brightnessctl-fixed = with pkgs; writeShellScriptBin "brightnessctl-fixed" ''
-  cur_brightness=''$(${brightnessctl}/bin/brightnessctl g)
-  max_brightness=''$(${brightnessctl}/bin/brightnessctl m)
-    if [ ''$cur_brightness -lt ''$(''$max_brightness / 20) ]; then 
-      if [ ''$0 -eq "up" ]; then
-        ${brightnessctl}/bin/brightnessctl s +5%
-      fi
-      if [ ''$0 -eq "down" ]; then
-        ${brightnessctl}/bin/brightnessctl s 1
-      fi
-    else
-      if [ ''$0 -eq "up" ]; then
-        ${brightnessctl}/bin/brightnessctl s +5%
-      fi
-      if [ ''$0 -eq "down" ]; then
-        ${brightnessctl}/bin/brightnessctl s 5%-
-      fi
-    fi
-  '';
 in {
-
 
   home.packages = with pkgs; [
     inputs.hyprwm-contrib.packages.${pkgs.system}.grimblast
@@ -48,6 +28,15 @@ in {
       ];
     };
     settings = {
+      env = [
+        "GDK_BACKEND,wayland,x11"
+        "QT_QPA_PLATFORM,wayland;xcb"
+        # CLUTTER_BACKEND = "wayland"
+        "XDG_CURRENT_DESKTOP,Hyprland"
+        "XDG_SESSION_TYPE,wayland"
+        "XDG_SESSION_DESKTOP,Hyprland"
+        "WLR_NO_HARDWARE_CURSORS,1"
+      ];
       general = {
         gaps_in = 5;
         gaps_out = 5;
@@ -83,10 +72,6 @@ in {
       };
 
       misc = {
-        # disable auto polling for config file changes
-        # TODO: Enable after done with testing
-        # disable_autoreload = true;
-
         force_default_wallpaper = 0;
 
         # disable dragging animation
