@@ -6,6 +6,7 @@
     ./wayland-wm
     ./alacritty.nix
     ./lazygit.nix
+    ./kdeconnect.nix
     ./mako.nix
     ./nixvim.nix
     ./starship.nix

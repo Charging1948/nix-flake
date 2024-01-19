@@ -12,6 +12,7 @@
     ./files.nix
     ./hardware.nix
     ./development.nix
+    ./connectivity.nix
     ./nvidia.nix
     ./razer.nix
     ./steam.nix
