@@ -157,6 +157,7 @@ in {
         playerctld = "${config.services.playerctld.package}/bin/playerctld";
         makoctl = "${config.services.mako.package}/bin/makoctl";
         wofi = "${config.programs.wofi.package}/bin/wofi";
+        wlogout = "${config.programs.wlogout.package}/bin/wlogout";
         # pass-wofi = "${pkgs.pass-wofi.override {
         #   pass = config.programs.password-store.package;
         # }}/bin/pass-wofi";
@@ -223,9 +224,12 @@ in {
 
       # Launcher
       (lib.optionals config.programs.wofi.enable [
-        "SUPER,x,exec,${wofi} -S drun -x 10 -y 10 -W 25% -H 60%"
+        # "SUPER,x,exec,${wofi} -S drun -x 10 -y 10 -W 25% -H 60%"
         "SUPER,d,exec,${wofi} -S run"
       ]) ++ 
+      (lib.optionals config.programs.wlogout.enable [
+        "SUPER,x,exec,pkill wlogout || ${wlogout}"
+      ]) ++
 
       # Workspaces
       # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
@@ -250,7 +254,10 @@ in {
       # in
       #   "${m.name},${if m.enabled then "${resolution},${position},1" else "disable"}"
       # ) (config.monitors);
-      monitor = [",preferred,auto,1"];
+      monitor = [
+        "DP-1,highrr,auto,1"
+        ",preferred,auto,1"
+      ];
 
       # workspace = map (m:
       #   "${m.name},${m.workspace}"
