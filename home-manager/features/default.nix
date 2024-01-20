@@ -9,7 +9,7 @@
     ./kdeconnect.nix
     ./mako.nix
     ./mangohud.nix
-    ./nixvim.nix
+    ./nvim.nix
     ./starship.nix
     ./tmux.nix
     ./zathura.nix
