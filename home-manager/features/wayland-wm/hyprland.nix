@@ -137,6 +137,10 @@ in {
         ];
       };
 
+      windowrulev2 = [
+        "float,center,size 70% 50%,dimaround,opacity 0.8 0.8,class:^(wlogout)$"
+      ];
+
       binde = let
         brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
       in [
