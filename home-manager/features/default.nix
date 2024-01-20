@@ -8,6 +8,7 @@
     ./lazygit.nix
     ./kdeconnect.nix
     ./mako.nix
+    ./mangohud.nix
     ./nixvim.nix
     ./starship.nix
     ./tmux.nix

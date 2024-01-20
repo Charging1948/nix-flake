@@ -8,6 +8,8 @@
     package = pkgs.steam.override {
        extraPkgs = pkgs: with pkgs; [
          gamescope
+         gamemode
+         mangohud
          xorg.libXcursor
          xorg.libXi
          xorg.libXinerama
@@ -26,4 +28,12 @@
     ];
   };
   programs.gamemode.enable = true;
+  hardware.opengl = {
+    extraPackages = with pkgs; [mangohud];
+    extraPackages32 = with pkgs; [mangohud];
+  };
+  environment.systemPackages = with pkgs; [
+    lutris
+    mangohud
+  ];
 }
