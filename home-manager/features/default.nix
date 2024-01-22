@@ -3,6 +3,7 @@
   imports = [
     ./cli
     ./kitty
+    ./games
     ./wayland-wm
     ./alacritty.nix
     ./lazygit.nix
