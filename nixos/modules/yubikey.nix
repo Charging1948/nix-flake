@@ -1,11 +1,22 @@
 { pkgs, ... }:
 {
-  services.udev.packages = [ pkgs.yubikey-personalization ];
+  services.udev.packages = with pkgs; [ 
+    yubikey-personalization
+    yubikey-personalization-gui
+    yubikey-touch-detector
+    yubikey-manager
+    yubikey-manager-qt
+    yubikey-agent
+    age-plugin-yubikey
+  ];
 
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
   };
+
+  services.yubikey-agent.enable = true;
+  programs.yubikey-touch-detector.enable = true;
 
   security.pam.services = {
     login.u2fAuth = true;
