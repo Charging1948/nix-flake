@@ -1,13 +1,23 @@
 { pkgs, ... }:
 {
   services.udev.packages = with pkgs; [ 
+    yubikey-agent
+    age-plugin-yubikey
     yubikey-personalization
     yubikey-personalization-gui
     yubikey-touch-detector
     yubikey-manager
     yubikey-manager-qt
+  ];
+
+  environment.systemPackages = with pkgs; [
     yubikey-agent
     age-plugin-yubikey
+    yubikey-personalization
+    yubikey-personalization-gui
+    yubikey-touch-detector
+    yubikey-manager
+    yubikey-manager-qt
   ];
 
   programs.gnupg.agent = {

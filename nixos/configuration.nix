@@ -123,15 +123,6 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  programs.ssh = {
-    startAgent = true;
-    extraConfig = ''
-Host github.com
-    Hostname ssh.github.com
-    Port 443
-    User git
-    '';
-  };
 
   programs.zsh.enable = true;
   programs.fish.enable = true;
