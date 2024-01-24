@@ -186,6 +186,11 @@ in {
         "SUPER,e,exec,${editor}"
         "SUPER,v,exec,${editor}"
         "SUPER,b,exec,${browser}"
+        # Window management
+        "SUPER,h,movefocus,l"
+        "SUPER,j,movefocus,d"
+        "SUPER,k,movefocus,u"
+        "SUPER,l,movefocus,r"
         # Volume
         ",XF86AudioRaiseVolume,exec,${pactl} set-sink-volume @DEFAULT_SINK@ +5%"
         ",XF86AudioLowerVolume,exec,${pactl} set-sink-volume @DEFAULT_SINK@ -5%"
