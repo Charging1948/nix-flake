@@ -1,5 +1,8 @@
 { pkgs, ... }:
 {
+
+  services.cpupower-gui.enable = true;
+
   services.hardware.bolt.enable = true;
   hardware.wooting.enable = true;
   hardware.keyboard.zsa.enable = true;

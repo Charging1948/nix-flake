@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   lib,
   ...
 }: {
@@ -22,7 +21,7 @@
       nvidiaBusId = lib.mkDefault "PCI:1:0:0";
     };
   };
-
+  services.thermald.enable = lib.mkDefault false;
 
   environment.systemPackages = with pkgs; [ nvidia-offload ];
 
@@ -35,10 +34,11 @@
       system.nixos.tags = ["high-performance"];
 
       boot.kernelPackages = mkAlmostForce pkgs.linuxPackages_xanmod;
-      hardware.nvidia.prime = with lib; {
+      hardware.nvidia.prime = {
         reverseSync.enable = mkAlmostForce false;
         sync.enable = mkAlmostForce true;
       };
+      services.thermald.enable = lib.mkForce false;
       powerManagement.cpuFreqGovernor = lib.mkForce "performance";
     };
 
@@ -48,6 +48,7 @@
 
       services.xserver.videoDrivers = lib.mkForce ["intel"];
       boot.kernelPackages = lib.mkForce pkgs.linuxPackages_zen;
+      services.thermald.enable = lib.mkForce true;
       hardware.nvidia.prime = with lib; {
         offload.enable = mkForce false;
         reverseSync.enable = mkForce false;
