@@ -50,6 +50,8 @@
     };
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
+    neovim-flake.url = "github:Charging1948/neovim-flake";
   };
 
   outputs = {
