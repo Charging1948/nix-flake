@@ -7,4 +7,5 @@
   tly = pkgs.callPackage ./tly { };
   hyprslurp = pkgs.callPackage ./hyprslurp { };
   nvidia-offload = pkgs.callPackage ./nvidia-offload { };
+  remove-keygrips = pkgs.callPackage ./remove-keygrips { };
 }
