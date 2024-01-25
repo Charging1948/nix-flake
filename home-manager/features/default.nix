@@ -1,6 +1,7 @@
-{lib, config, ...}:
+{...}:
 {
   imports = [
+    ./auth
     ./cli
     ./kitty
     ./games
