@@ -78,13 +78,14 @@ in
         modules-right = [
           "network"
           "tray"
+          "custom/gammastep"
           "custom/hostname"
         ];
 
         clock = {
-          interval = 1;
-          format = "{:%d\.%m %H:%M:%S}";
-          format-alt = "{:%d\.%m\.%Y %H:%M:%S %z}";
+          interval = 30;
+          format = "{:%d\.%m %H:%M}";
+          format-alt = "{:%d\.%m\.%Y %H:%M:%S}";
           on-click-left = "mode";
           tooltip-format = ''
             <big>{:%Y %B}</big>
@@ -251,7 +252,7 @@ in
     # font-family: ${config.fontProfiles.regular.family}, ${config.fontProfiles.monospace.family};
     style = let inherit (config.colorScheme) colors; in /* css */ ''
       * {
-        font-size: 12pt;
+        font-size: 14pt;
         padding: 0;
         margin: 0 0.4em;
       }
