@@ -1,7 +1,5 @@
+{ pkgs, ... }:
 {
-  pkgs,
-  ...
-}: {
   imports = [
     # ./desktop/common
     ./podman.nix
@@ -16,6 +14,7 @@
     ./vscode.nix
     ./waydroid.nix
     ./wayland-wm.nix
+    ./x11-wm.nix
     ./wine.nix
     ./yubikey.nix
   ];

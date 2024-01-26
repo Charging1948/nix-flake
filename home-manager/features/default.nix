@@ -1,4 +1,4 @@
-{...}:
+{ ... }:
 {
   imports = [
     ./auth
@@ -6,6 +6,7 @@
     ./kitty
     ./games
     ./wayland-wm
+    ./x11-wm
     ./alacritty.nix
     ./lazygit.nix
     ./kdeconnect.nix
