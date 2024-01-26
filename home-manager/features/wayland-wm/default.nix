@@ -1,6 +1,6 @@
-{ lib, ... }:
-{
+{ ... }: {
   imports = [
+    ./gammastep.nix
     ./hyprland.nix
     ./hyprbars.nix
     ./swayidle.nix
