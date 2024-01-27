@@ -1,4 +1,5 @@
 { pkgs, lib, inputs, ... }: {
+  boot.kernelParams = [ "nvidia_drm.modeset=1" ];
   hardware.nvidia = {
     modesetting.enable = lib.mkDefault true;
     open = lib.mkForce false;

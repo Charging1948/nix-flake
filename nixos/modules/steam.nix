@@ -1,7 +1,6 @@
 { inputs, pkgs, ... }: {
   programs.steam = {
     enable = true;
-    package = pkgs.unstable.steam;
     # package = pkgs.steam.override {
     #   extraLibraries = (pkgs: [
     #     pkgs.openssl
