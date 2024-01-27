@@ -30,6 +30,8 @@
 
       boot.kernelPackages = mkAlmostForce pkgs.linuxPackages_xanmod;
       hardware.nvidia.prime = {
+        offload.enable = mkAlmostForce false;
+        offload.enableOffloadCmd = mkAlmostForce false;
         reverseSync.enable = mkAlmostForce false;
         sync.enable = mkAlmostForce true;
       };
@@ -47,6 +49,7 @@
       services.thermald.enable = lib.mkForce true;
       hardware.nvidia.prime = with lib; {
         offload.enable = mkForce false;
+        offload.enableOffloadCmd = mkForce false;
         reverseSync.enable = mkForce false;
         sync.enable = mkForce false;
       };
