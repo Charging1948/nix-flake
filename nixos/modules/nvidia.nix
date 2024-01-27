@@ -20,7 +20,7 @@
   };
   services.thermald.enable = lib.mkDefault false;
 
-  environment.systemPackages = with pkgs; [ nvidia-offload ];
+  environment.systemPackages = with pkgs; [ nvidia-offload nvtop glxinfo ];
 
   specialisation = {
 
