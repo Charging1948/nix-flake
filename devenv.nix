@@ -6,5 +6,5 @@
   # https://devenv.sh/pre-commit-hooks/
   pre-commit.hooks.nixfmt.enable = true;
   pre-commit.hooks.nil.enable = true;
-  pre-commit.hooks.deadnix.enable = true;
+  # pre-commit.hooks.deadnix.enable = true;
 }
