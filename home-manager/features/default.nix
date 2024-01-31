@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   imports = [
     ./auth
     ./cli
@@ -12,6 +11,7 @@
     ./kdeconnect.nix
     ./mako.nix
     ./mangohud.nix
+    ./neovide.nix
     ./nvim.nix
     ./starship.nix
     ./tmux.nix
