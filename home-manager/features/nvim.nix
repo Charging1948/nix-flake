@@ -1,14 +1,6 @@
-{
-  pkgs,
-  config,
-  lib,
-  inputs,
-  ...
-}: {
+{ pkgs, config, lib, inputs, ... }: {
 
-  home.packages = [
-    inputs.neovim-flake.packages.${pkgs.system}.default
-  ];
+  home.packages = [ inputs.neovim-flake.packages.${pkgs.system}.default ];
   # programs.nixvim = {
   #   enable = true;
   #   plugins = {

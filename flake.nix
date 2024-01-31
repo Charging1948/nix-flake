@@ -26,13 +26,13 @@
     # everything match nicely? Try nix-colors!
     nix-colors.url = "github:misterio77/nix-colors";
 
-    nixvim = {
-      # url = "github:nix-community/nixvim";
-      # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
-      url = "github:nix-community/nixvim/nixos-23.11";
-
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # nixvim = {
+    #   # url = "github:nix-community/nixvim";
+    #   # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
+    #   url = "github:nix-community/nixvim/nixos-23.11";
+    #
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     hyprland = {
       url = "github:hyprwm/hyprland";
@@ -51,7 +51,7 @@
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
-    neovim-flake.url = "github:Charging1948/neovim-flake";
+    neovim-flake.url = "github:Charging1948/neovim";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
