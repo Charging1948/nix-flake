@@ -19,20 +19,11 @@
 
     nix-gaming.url = "github:fufexan/nix-gaming";
 
-    # TODO: Add any other flake you might need
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
     nix-colors.url = "github:misterio77/nix-colors";
-
-    # nixvim = {
-    #   # url = "github:nix-community/nixvim";
-    #   # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
-    #   url = "github:nix-community/nixvim/nixos-23.11";
-    #
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
 
     hyprland = {
       url = "github:hyprwm/hyprland";
