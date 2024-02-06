@@ -9,4 +9,6 @@
   services.geoclue2.enable = true;
 
   environment.systemPackages = with pkgs.unstable; [keymapp wootility];
+
+  users.users.jk.extraGroups = ["input"];
 }

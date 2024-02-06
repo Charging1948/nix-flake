@@ -1,8 +1,8 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   imports = [
     # ./desktop/common
     ./podman.nix
+    ./retroarch.nix
     ./gnome.nix
     ./files.nix
     ./hardware.nix
@@ -18,9 +18,6 @@
     ./wine.nix
     ./yubikey.nix
   ];
-  environment.systemPackages = with pkgs; [
-    cachix
-    ungoogled-chromium
-  ];
+  environment.systemPackages = with pkgs; [cachix ungoogled-chromium];
   services.teamviewer.enable = true;
 }
