@@ -1,6 +1,5 @@
-{ pkgs, ... }:
-{
-  services.udev.packages = with pkgs; [ 
+{pkgs, ...}: {
+  services.udev.packages = with pkgs; [
     yubikey-agent
     age-plugin-yubikey
     yubikey-personalization
@@ -18,6 +17,7 @@
     yubikey-touch-detector
     yubikey-manager
     yubikey-manager-qt
+    remove-keygrips
   ];
 
   programs.gnupg.agent = {
@@ -35,11 +35,11 @@
 
   # Lock screen when unplugging yubikey
   services.udev.extraRules = ''
-      ACTION=="remove",\
-       ENV{ID_BUS}=="usb",\
-       ENV{ID_MODEL_ID}=="0407",\
-       ENV{ID_VENDOR_ID}=="1050",\
-       ENV{ID_VENDOR}=="Yubico",\
-       RUN+="${pkgs.systemd}/bin/loginctl lock-sessions"
+    ACTION=="remove",\
+     ENV{ID_BUS}=="usb",\
+     ENV{ID_MODEL_ID}=="0407",\
+     ENV{ID_VENDOR_ID}=="1050",\
+     ENV{ID_VENDOR}=="Yubico",\
+     RUN+="${pkgs.systemd}/bin/loginctl lock-sessions"
   '';
 }
