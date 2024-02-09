@@ -13,5 +13,7 @@
     ];
   };
 
+  environment.systemPackages = with pkgs; [wdisplays];
+
   security.pam.services.swaylock = {};
 }
