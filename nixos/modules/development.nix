@@ -20,7 +20,7 @@ in {
   environment.systemPackages = let
     inherit (pkgs.unstable) jetbrains;
   in
-    [pkgs.make]
+    [pkgs.gnumake]
     ++ map
     (pkgName:
       lib.attrByPath [pkgName] null jetbrains
