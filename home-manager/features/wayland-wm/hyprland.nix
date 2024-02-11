@@ -15,7 +15,6 @@
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     xwayland.enable = true;
-    nvidiaPatches = true;
     systemd = {
       enable = true;
       # Same as default, but stop graphical-session too
