@@ -1,5 +1,10 @@
-{ outputs, config, lib, pkgs, ... }:
-let
+{
+  outputs,
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   # Dependencies
   cat = "${pkgs.coreutils}/bin/cat";
   cut = "${pkgs.coreutils}/bin/cut";
@@ -21,22 +26,26 @@ let
   wofi = "${pkgs.wofi}/bin/wofi";
 
   # Function to simplify making waybar outputs
-  jsonOutput = name:
-    { pre ? "", text ? "", tooltip ? "", alt ? "", class ? "", percentage ? "",
-    }:
-    "${
-      pkgs.writeShellScriptBin "waybar-${name}" ''
-        set -euo pipefail
-        ${pre}
-        ${jq} -cn \
-          --arg text "${text}" \
-          --arg tooltip "${tooltip}" \
-          --arg alt "${alt}" \
-          --arg class "${class}" \
-          --arg percentage "${percentage}" \
-          '{text:$text,tooltip:$tooltip,alt:$alt,class:$class,percentage:$percentage}'
-      ''
-    }/bin/waybar-${name}";
+  jsonOutput = name: {
+    pre ? "",
+    text ? "",
+    tooltip ? "",
+    alt ? "",
+    class ? "",
+    percentage ? "",
+  }: "${
+    pkgs.writeShellScriptBin "waybar-${name}" ''
+      set -euo pipefail
+      ${pre}
+      ${jq} -cn \
+        --arg text "${text}" \
+        --arg tooltip "${tooltip}" \
+        --arg alt "${alt}" \
+        --arg class "${class}" \
+        --arg percentage "${percentage}" \
+        '{text:$text,tooltip:$tooltip,alt:$alt,class:$class,percentage:$percentage}'
+    ''
+  }/bin/waybar-${name}";
 
   hasSway = config.wayland.windowManager.sway.enable;
   sway = config.wayland.windowManager.sway.package;
@@ -44,7 +53,7 @@ let
   hyprland = config.wayland.windowManager.hyprland.package;
 in {
   # Let it try to start a few more times
-  systemd.user.services.waybar = { Unit.StartLimitBurst = 30; };
+  systemd.user.services.waybar = {Unit.StartLimitBurst = 30;};
   programs.waybar = {
     enable = true;
     systemd.enable = true;
@@ -55,17 +64,18 @@ in {
         height = 40;
         margin = "6";
         position = "top";
-        modules-left = [ "custom/menu" ]
-          ++ (lib.optionals hasSway [ "sway/workspaces" "sway/mode" ])
+        modules-left =
+          ["custom/menu"]
+          ++ (lib.optionals hasSway ["sway/workspaces" "sway/mode"])
           ++ (lib.optionals hasHyprland [
             "hyprland/workspaces"
             "hyprland/submap"
-          ]) ++ [ "custom/currentplayer" "custom/player" ];
+          ])
+          ++ ["custom/currentplayer" "custom/player"];
 
-        modules-center = [ "cpu" "memory" "clock" "pulseaudio" "battery" ];
+        modules-center = ["cpu" "memory" "clock" "pulseaudio" "battery"];
 
-        modules-right =
-          [ "network" "tray" "custom/gammastep" "custom/hostname" ];
+        modules-right = ["network" "tray" "custom/hostname"];
 
         clock = {
           interval = 30;
@@ -77,7 +87,7 @@ in {
             <tt><small>{calendar}</small></tt>'';
         };
 
-        cpu = { format = "  {usage}%"; };
+        cpu = {format = "  {usage}%";};
         "custom/gpu" = {
           interval = 5;
           exec = "${cat} /sys/class/drm/card0/device/gpu_busy_percent";
@@ -95,7 +105,7 @@ in {
             headphone = "󰋋";
             headset = "󰋎";
             portable = "";
-            default = [ "" "" "" ];
+            default = ["" "" ""];
           };
           on-click = pavucontrol;
         };
@@ -109,12 +119,12 @@ in {
         battery = {
           bat = "BAT0";
           interval = 10;
-          format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+          format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
           format = "{icon} {capacity}%";
           format-charging = "󰂄 {capacity}%";
           onclick = "";
         };
-        "sway/window" = { max-length = 20; };
+        "sway/window" = {max-length = 20;};
         network = {
           interval = 3;
           format-wifi = "   {essid}";
@@ -137,7 +147,7 @@ in {
           on-click-left = "${wofi} -S drun -x 10 -y 10 -W 25% -H 60%";
           on-click-right = lib.concatStringsSep ";" ((lib.optional hasHyprland
             "${hyprland}/bin/hyprctl dispatch togglespecialworkspace")
-            ++ (lib.optional hasSway "${sway}/bin/swaymsg scratchpad show"));
+          ++ (lib.optional hasSway "${sway}/bin/swaymsg scratchpad show"));
         };
         "custom/hostname" = {
           exec = "echo $USER@$HOSTNAME";
@@ -171,8 +181,7 @@ in {
             "active (Transition (Day)" = " ";
             "active (Transition (Daytime)" = " ";
           };
-          on-click =
-            "${systemctl} --user is-active gammastep && ${systemctl} --user stop gammastep || ${systemctl} --user start gammastep";
+          on-click = "${systemctl} --user is-active gammastep && ${systemctl} --user stop gammastep || ${systemctl} --user start gammastep";
         };
         "custom/currentplayer" = {
           interval = 2;
@@ -236,7 +245,7 @@ in {
       # css
     in ''
       * {
-        font-size: 14pt;
+        font-size: 12pt;
         padding: 0;
         margin: 0 0.4em;
       }
