@@ -1,4 +1,8 @@
-{ inputs, pkgs, ... }: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   programs.steam = {
     enable = true;
     # package = pkgs.steam.override {
@@ -32,10 +36,9 @@
     #     ];
     # };
     gamescopeSession.enable = true;
-    extraCompatPackages =
-      [ inputs.nix-gaming.packages.${pkgs.system}.proton-ge ];
+    extraCompatPackages = [inputs.nix-gaming.packages.${pkgs.system}.proton-ge];
   };
-  programs.gamemode = { enable = true; };
+  programs.gamemode = {enable = true;};
   programs.gamescope = {
     enable = true;
     package = pkgs.gamescope;
@@ -48,8 +51,8 @@
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
-    extraPackages = with pkgs; [ mangohud ];
-    extraPackages32 = with pkgs; [ mangohud ];
+    extraPackages = with pkgs; [mangohud];
+    extraPackages32 = with pkgs; [mangohud];
   };
-  environment.systemPackages = with pkgs; [ lutris steamtinkerlaunch ];
+  environment.systemPackages = with pkgs; [lutris steamtinkerlaunch];
 }
