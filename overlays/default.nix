@@ -7,7 +7,6 @@
   # You can change versions, add patches, set compilation flags, anything really.
   # https://nixos.wiki/wiki/Overlays
   modifications = final: _prev: {
-    final.steam = _prev.unstable.steam;
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
