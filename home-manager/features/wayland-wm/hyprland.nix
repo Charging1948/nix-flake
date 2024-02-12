@@ -51,6 +51,7 @@
       input = {
         kb_layout = "de";
         kb_variant = "nodeadkeys";
+        kb_options = "ctrl:nocaps";
 
         follow_mouse = 1;
         accel_profile = "flat";
@@ -68,13 +69,15 @@
       };
 
       misc = {
+        disable_autoreload = true;
         force_default_wallpaper = 0;
 
         # disable dragging animation
         animate_mouse_windowdragging = false;
 
         # enable variable refresh rate (effective depending on hardware)
-        vrr = 1;
+        vfr = true;
+        vrr = 2;
 
         close_special_on_empty = true;
         # Unfullscreen when opening something
