@@ -229,7 +229,7 @@
         ++
         # Launcher
         (lib.optionals config.programs.wofi.enable [
-          # "SUPER,x,exec,${wofi} -S drun -x 10 -y 10 -W 25% -H 60%"
+          "SUPER,x,exec,${wofi} -S drun -x 10 -y 10 -W 25% -H 60%"
           "SUPER,d,exec,${wofi} -S run"
         ])
         ++ (lib.optionals config.programs.wlogout.enable
@@ -237,7 +237,8 @@
         ++
         # Workspaces
         # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
-        (builtins.concatLists (builtins.genList (x: let
+        (builtins.concatLists (builtins.genList
+          (x: let
             ws = let c = (x + 1) / 10; in builtins.toString (x + 1 - (c * 10));
           in [
             "SUPER, ${ws}, workspace, ${toString (x + 1)}"
