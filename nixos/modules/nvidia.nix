@@ -35,10 +35,7 @@
     glmark2
   ];
 
-  services.xserver.displayManager = {
-    wayland = true;
-    nvidiaWayland = true;
-  };
+  services.xserver.displayManager.gdm = {wayland = true;};
 
   specialisation = {
     # Enable Sync Mode for maximum performance
