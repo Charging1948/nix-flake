@@ -27,7 +27,18 @@
   };
   services.thermald.enable = lib.mkDefault false;
 
-  environment.systemPackages = with pkgs; [nvidia-offload nvtop glxinfo];
+  environment.systemPackages = with pkgs; [
+    nvidia-offload
+    nvtop
+    glxinfo
+    vulkan-tools
+    glmark2
+  ];
+
+  services.xserver.displayManager = {
+    wayland = true;
+    nvidiaWayland = true;
+  };
 
   specialisation = {
     # Enable Sync Mode for maximum performance
