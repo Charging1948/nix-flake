@@ -25,6 +25,8 @@
     };
     settings = {
       env = [
+        "LIBVA_DRIVER_NAME,nvidia"
+        "GBM_BACKEND,nvidia-drm"
         "GDK_BACKEND,wayland,x11"
         "QT_QPA_PLATFORM,wayland;xcb"
         # CLUTTER_BACKEND = "wayland"
