@@ -10,17 +10,15 @@
     enableFishIntegration = true;
     enableBashIntegration = true;
 
-    settings = with config.colorScheme.colors; {
-      format =
-        let
-          git = "$git_branch$git_commit$git_state$git_status";
-          cloud = "$aws$gcloud$openstack";
-        in
-        ''
-          $username$hostname($shlvl)($cmd_duration) $fill ($nix_shell)$custom
-          $directory(${git})(- ${cloud}) $fill $time
-          $jobs$character
-        '';
+    settings = with config.colorScheme.palette; {
+      format = let
+        git = "$git_branch$git_commit$git_state$git_status";
+        cloud = "$aws$gcloud$openstack";
+      in ''
+        $username$hostname($shlvl)($cmd_duration) $fill ($nix_shell)$custom
+        $directory(${git})(- ${cloud}) $fill $time
+        $jobs$character
+      '';
 
       fill = {
         symbol = " ";
@@ -44,9 +42,7 @@
         repeat = true;
         disabled = false;
       };
-      cmd_duration = {
-        format = "took [$duration]($style) ";
-      };
+      cmd_duration = {format = "took [$duration]($style) ";};
 
       directory = {
         format = "[$path]($style)( [$read_only]($read_only_style)) ";
@@ -68,7 +64,7 @@
       };
 
       time = {
-        format = "\\\[[$time]($style)\\\]";
+        format = "\\[[$time]($style)\\]";
         disabled = false;
       };
 
@@ -76,9 +72,7 @@
       gcloud = {
         format = "on [$symbol$active(/$project)(\\($region\\))]($style)";
       };
-      aws = {
-        format = "on [$symbol$profile(\\($region\\))]($style)";
-      };
+      aws = {format = "on [$symbol$profile(\\($region\\))]($style)";};
 
       # Icon changes only \/
       aws.symbol = "  ";

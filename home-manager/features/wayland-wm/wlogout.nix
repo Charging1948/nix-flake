@@ -1,5 +1,9 @@
-{ pkgs, lib, config, ... }:
 {
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   programs.wlogout = {
     enable = true;
     layout = [
@@ -40,56 +44,56 @@
         "keybind" = "r";
       }
     ];
-    style = with config.colorScheme.colors; ''
-    * {
- background-image: none;
-}
+    style = with config.colorScheme.palette; ''
+          * {
+       background-image: none;
+      }
 
-button {
- background-color: ${base01};
- border-width: 0px;
- border-radius: 0;
- background-repeat: no-repeat;
- background-position: center;
- background-size: 25%;
- color: ${base06};
-}
+      button {
+       background-color: ${base01};
+       border-width: 0px;
+       border-radius: 0;
+       background-repeat: no-repeat;
+       background-position: center;
+       background-size: 25%;
+       color: ${base06};
+      }
 
-button:active, button:hover {
- background-color: ${base04};
- color: ${base07};
- outline-style: none;
-}
+      button:active, button:hover {
+       background-color: ${base04};
+       color: ${base07};
+       outline-style: none;
+      }
 
-#lock {
- opacity: 0.9;
- background-image: image(url("${pkgs.wlogout}/icons/logout.png"), url("${pkgs.wlogout}/icons/logout.png"));
-}
+      #lock {
+       opacity: 0.9;
+       background-image: image(url("${pkgs.wlogout}/icons/logout.png"), url("${pkgs.wlogout}/icons/logout.png"));
+      }
 
-#logout {
- opacity: 0.9;
- background-image: image(url("${pkgs.wlogout}/icons/logout.png"), url("${pkgs.wlogout}/icons/logout.png"));
-}
+      #logout {
+       opacity: 0.9;
+       background-image: image(url("${pkgs.wlogout}/icons/logout.png"), url("${pkgs.wlogout}/icons/logout.png"));
+      }
 
-#suspend {
- opacity: 0.9;
- background-image: image(url("${pkgs.wlogout}/icons/suspend.png"), url("${pkgs.wlogout}/icons/suspend.png"));
-}
+      #suspend {
+       opacity: 0.9;
+       background-image: image(url("${pkgs.wlogout}/icons/suspend.png"), url("${pkgs.wlogout}/icons/suspend.png"));
+      }
 
-#hibernate {
- opacity: 0.9;
- background-image: image(url("${pkgs.wlogout}/icons/hibernate.png"), url("${pkgs.wlogout}/icons/hibernate.png"));
-}
+      #hibernate {
+       opacity: 0.9;
+       background-image: image(url("${pkgs.wlogout}/icons/hibernate.png"), url("${pkgs.wlogout}/icons/hibernate.png"));
+      }
 
-#shutdown {
- opacity: 0.9;
- background-image: image(url("${pkgs.wlogout}/icons/shutdown.png"), url("${pkgs.wlogout}/icons/shutdown.png"));
-}
+      #shutdown {
+       opacity: 0.9;
+       background-image: image(url("${pkgs.wlogout}/icons/shutdown.png"), url("${pkgs.wlogout}/icons/shutdown.png"));
+      }
 
-#reboot {
- opacity: 0.9;
- background-image: image(url("${pkgs.wlogout}/icons/reboot.png"), url("${pkgs.wlogout}/icons/reboot.png"));
-}
+      #reboot {
+       opacity: 0.9;
+       background-image: image(url("${pkgs.wlogout}/icons/reboot.png"), url("${pkgs.wlogout}/icons/reboot.png"));
+      }
 
     '';
   };

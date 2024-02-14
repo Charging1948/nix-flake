@@ -23,7 +23,7 @@
         "systemctl --user start hyprland-session.target"
       ];
     };
-    settings = {
+    settings = with config.colorScheme.palette; {
       env = [
         "LIBVA_DRIVER_NAME,nvidia"
         "GBM_BACKEND,nvidia-drm"
@@ -42,12 +42,12 @@
         gaps_out = 5;
         border_size = 2.7;
         cursor_inactive_timeout = 4;
-        "col.active_border" = "0xff${config.colorScheme.colors.base0C}";
-        "col.inactive_border" = "0xff${config.colorScheme.colors.base02}";
+        "col.active_border" = "0xff${base0C}";
+        "col.inactive_border" = "0xff${base02}";
       };
       group = {
-        "col.border_active" = "0xff${config.colorScheme.colors.base0B}";
-        "col.border_inactive" = "0xff${config.colorScheme.colors.base04}";
+        "col.border_active" = "0xff${base0B}";
+        "col.border_inactive" = "0xff${base04}";
         groupbar = {font_size = 11;};
       };
       input = {
