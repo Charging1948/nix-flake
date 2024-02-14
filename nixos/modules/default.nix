@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     # ./desktop/common
+    ./boot.nix
     ./podman.nix
     ./retroarch.nix
     ./gnome.nix
