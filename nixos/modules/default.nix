@@ -2,6 +2,7 @@
   imports = [
     # ./desktop/common
     ./boot.nix
+    ./displaylink.nix
     ./podman.nix
     ./retroarch.nix
     ./gnome.nix
