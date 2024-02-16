@@ -21,4 +21,5 @@
   ];
   environment.systemPackages = with pkgs; [cachix ungoogled-chromium];
   services.teamviewer.enable = true;
+  programs.noisetorch.enable = true;
 }
