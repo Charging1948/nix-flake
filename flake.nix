@@ -43,6 +43,7 @@
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
     neovim-flake.url = "github:Charging1948/neovim";
+    tmux-flake.url = "github:Charging1948/tmux";
 
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     nixpkgs-wayland.inputs.nixpkgs.follows = "nixpkgs-unstable";
