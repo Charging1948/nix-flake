@@ -1,8 +1,8 @@
-{ ... }: {
+{...}: {
   imports = [
     ./gammastep.nix
     ./hyprland.nix
-    ./hyprbars.nix
+    # ./hyprbars.nix
     ./swayidle.nix
     ./swaylock.nix
     ./waybar.nix
