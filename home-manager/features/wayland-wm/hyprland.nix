@@ -40,7 +40,7 @@
       general = {
         gaps_in = 5;
         gaps_out = 5;
-        border_size = 2.7;
+        border_size = 3;
         cursor_inactive_timeout = 4;
         "col.active_border" = "0xff${base0C}";
         "col.inactive_border" = "0xff${base02}";
