@@ -20,11 +20,12 @@ in {
   environment.systemPackages = let
     inherit (pkgs.unstable) jetbrains;
   in
-    [pkgs.gnumake]
-    ++ map
-    (pkgName:
-      lib.attrByPath [pkgName] null jetbrains
-      // jetbrains.plugins.addPlugins jetbrains.${pkgName}
-      jetbrains-idea-config.extensions)
-    jetbrains-idea-config.programs;
+    with pkgs;
+      [gnumake insomnia]
+      ++ map
+      (pkgName:
+        lib.attrByPath [pkgName] null jetbrains
+        // jetbrains.plugins.addPlugins jetbrains.${pkgName}
+        jetbrains-idea-config.extensions)
+      jetbrains-idea-config.programs;
 }
