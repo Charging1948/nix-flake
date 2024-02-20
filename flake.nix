@@ -47,6 +47,8 @@
 
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     nixpkgs-wayland.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
+    nix-wallpaper.url = "github:lunik1/nix-wallpaper";
   };
 
   outputs = {
