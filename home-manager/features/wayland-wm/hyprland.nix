@@ -23,6 +23,9 @@
         "systemctl --user start hyprland-session.target"
       ];
     };
+
+    exec = ["${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper.path} --mode fill"];
+
     settings = with config.colorScheme.palette; {
       env = [
         "LIBVA_DRIVER_NAME,nvidia"
@@ -40,7 +43,7 @@
       general = {
         gaps_in = 5;
         gaps_out = 5;
-        border_size = 3;
+        border_size = 2;
         cursor_inactive_timeout = 4;
         "col.active_border" = "0xff${base0C}";
         "col.inactive_border" = "0xff${base02}";
@@ -141,7 +144,11 @@
 
       binde = let
         brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
+        pactl = "${pkgs.pulseaudio}/bin/pactl";
       in [
+        # Volume control
+        ",XF86AudioRaiseVolume,exec,${pactl} set-sink-volume @DEFAULT_SINK@ +5%"
+        ",XF86AudioLowerVolume,exec,${pactl} set-sink-volume @DEFAULT_SINK@ -5%"
         # Brightness control
         ",XF86MonBrightnessUp,exec,${brightnessctl} s +5%"
         ",XF86MonBrightnessDown,exec,${brightnessctl} s 5%- -n"
@@ -193,8 +200,6 @@
           "SUPER,k,movefocus,u"
           "SUPER,l,movefocus,r"
           # Volume
-          ",XF86AudioRaiseVolume,exec,${pactl} set-sink-volume @DEFAULT_SINK@ +5%"
-          ",XF86AudioLowerVolume,exec,${pactl} set-sink-volume @DEFAULT_SINK@ -5%"
           ",XF86AudioMute,exec,${pactl} set-sink-mute @DEFAULT_SINK@ toggle"
           "SHIFT,XF86AudioMute,exec,${pactl} set-source-mute @DEFAULT_SOURCE@ toggle"
           ",XF86AudioMicMute,exec,${pactl} set-source-mute @DEFAULT_SOURCE@ toggle"
@@ -234,7 +239,7 @@
         ++
         # Launcher
         (lib.optionals config.programs.wofi.enable [
-          "SUPER,x,exec,${wofi} -S drun -x 10 -y 10 -W 25% -H 60%"
+          # "SUPER,x,exec,${wofi} -S drun -x 10 -y 10 -W 25% -H 60%"
           "SUPER,d,exec,${wofi} -S run"
         ])
         ++ (lib.optionals config.programs.wlogout.enable
@@ -257,7 +262,7 @@
       # in
       #   "${m.name},${if m.enabled then "${resolution},${position},1" else "disable"}"
       # ) (config.monitors);
-      monitor = ["DP-1,highrr,auto,1" ",preferred,auto,1"];
+      monitor = [",preferred,auto,1"];
 
       # workspace = map (m:
       #   "${m.name},${m.workspace}"
