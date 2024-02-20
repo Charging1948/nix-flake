@@ -700,6 +700,22 @@
         "type": "github"
       }
     },
+    "md-icons": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1695866510,
+        "narHash": "sha256-R2AuX6iySZwQe2BCuyrISlIAR2Vb/wXrrE74pAnHv2Y=",
+        "owner": "marella",
+        "repo": "material-design-icons",
+        "rev": "e38157df0c4989a92adf25ed95e44a3e4d22a07d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "marella",
+        "repo": "material-design-icons",
+        "type": "github"
+      }
+    },
     "neovim-flake": {
       "inputs": {
         "nixpkgs": "nixpkgs_2",
@@ -1325,6 +1341,7 @@
         "hyprland": "hyprland",
         "hyprland-plugins": "hyprland-plugins",
         "hyprwm-contrib": "hyprwm-contrib",
+        "md-icons": "md-icons",
         "neovim-flake": "neovim-flake",
         "nix-colors": "nix-colors",
         "nix-gaming": "nix-gaming",

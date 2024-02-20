@@ -49,6 +49,11 @@
     nixpkgs-wayland.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     nix-wallpaper.url = "github:lunik1/nix-wallpaper";
+
+    md-icons = {
+      url = "github:marella/material-design-icons";
+      flake = false;
+    };
   };
 
   outputs = {
