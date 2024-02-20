@@ -5,10 +5,10 @@
   config,
   ...
 }: let
-  inherit (lib) types mkOption mkEnableOption;
+  inherit (lib) types mkOption;
 in {
   options.icons = mkOption {
-    type = types.path;
+    type = types.str;
     default = let
       wallpaperPackage = inputs.md-icons;
     in "${wallpaperPackage}/svg";

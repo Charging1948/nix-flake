@@ -5,7 +5,7 @@
   config,
   ...
 }: let
-  inherit (lib) types mkOption mkEnableOption;
+  inherit (lib) types mkOption;
 in {
   options.wallpaper = {
     preset = mkOption {
