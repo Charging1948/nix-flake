@@ -8,9 +8,9 @@
     package = pkgs.steam.override {
       extraPkgs = pkgs:
         with pkgs; [
-          gamescope
+          # gamescope
+          # mangohud
           gamemode
-          mangohud
           xorg.libXcursor
           xorg.libXi
           xorg.libXinerama
@@ -23,13 +23,12 @@
           keyutils
         ];
     };
-    gamescopeSession.enable = true;
+    # gamescopeSession.enable = true;
     extraCompatPackages = [inputs.nix-gaming.packages.${pkgs.system}.proton-ge];
   };
   programs.gamemode = {enable = true;};
   programs.gamescope = {
     enable = true;
-    package = pkgs.gamescope;
     capSysNice = true;
   };
 

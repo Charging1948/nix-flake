@@ -106,7 +106,7 @@
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
-    systemd-boot.configurationLimit = 25;
+    systemd-boot.configurationLimit = 20;
   };
 
   # Enable networking
@@ -170,7 +170,6 @@
     unstable.scanmem
     xclip
     wl-clipboard
-    inputs.nix-gaming.packages.${pkgs.system}.rocket-league
   ];
 
   hardware = {opengl.enable = true;};
