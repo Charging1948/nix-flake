@@ -8,7 +8,7 @@
   inherit (lib) types mkOption;
 in {
   options.icons = mkOption {
-    type = types.str;
+    type = types.path;
     default = let
       wallpaperPackage = inputs.md-icons;
     in "${wallpaperPackage}/svg";

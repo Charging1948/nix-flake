@@ -3,4 +3,5 @@
 {
   # List your module files here
   wallpaper = import ./wallpaper.nix;
+  icons = import ./icons.nix;
 }
