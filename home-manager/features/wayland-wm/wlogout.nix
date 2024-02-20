@@ -67,32 +67,32 @@
 
       #lock {
        opacity: 0.9;
-       background-image: image(url("${pkgs.wlogout}/icons/logout.png"), url("${pkgs.wlogout}/icons/logout.png"));
+      background-image: image(url("${config.icons}/svg/round/logout.svg"), url("${config.icons}/svg/round/logout.svg"));
       }
 
       #logout {
        opacity: 0.9;
-       background-image: image(url("${pkgs.wlogout}/icons/logout.png"), url("${pkgs.wlogout}/icons/logout.png"));
+       background-image: image(url("${config.icons}/svg/round/logout.svg"), url("${config.icons}/svg/round/logout.svg"));
       }
 
       #suspend {
        opacity: 0.9;
-       background-image: image(url("${pkgs.wlogout}/icons/suspend.png"), url("${pkgs.wlogout}/icons/suspend.png"));
+       background-image: image(url("${config.icons}/svg/round/bedtime.svg"), url("${config.icons}/svg/round/bedtime.svg"));
       }
 
       #hibernate {
        opacity: 0.9;
-       background-image: image(url("${pkgs.wlogout}/icons/hibernate.png"), url("${pkgs.wlogout}/icons/hibernate.png"));
+       background-image: image(url("${config.icons}/svg/round/ac_unit.svg"), url("${config.icons}/svg/round/ac_unit.svg"));
       }
 
       #shutdown {
        opacity: 0.9;
-       background-image: image(url("${pkgs.wlogout}/icons/shutdown.png"), url("${pkgs.wlogout}/icons/shutdown.png"));
+       background-image: image(url("${config.icons}/svg/round/power_off.svg"), url("${config.icons}/svg/round/power_off.svg"));
       }
 
       #reboot {
        opacity: 0.9;
-       background-image: image(url("${pkgs.wlogout}/icons/reboot.png"), url("${pkgs.wlogout}/icons/reboot.png"));
+       background-image: image(url("${config.icons}/svg/round/loop.svg"), url("${config.icons}/svg/round/loop.svg"));
       }
 
     '';
