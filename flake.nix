@@ -17,7 +17,10 @@
 
     devenv.url = "github:cachix/devenv";
 
-    nix-gaming.url = "github:fufexan/nix-gaming";
+    nix-gaming = {
+      url = "github:fufexan/nix-gaming";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
