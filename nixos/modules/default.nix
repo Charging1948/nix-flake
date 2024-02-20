@@ -19,7 +19,7 @@
     ./wine.nix
     ./yubikey.nix
   ];
-  environment.systemPackages = with pkgs; [cachix ungoogled-chromium seatd];
+  environment.systemPackages = with pkgs; [cachix ungoogled-chromium];
   services.teamviewer.enable = true;
   programs.noisetorch.enable = true;
   security.polkit.enable = true;

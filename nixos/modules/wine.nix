@@ -1,8 +1,11 @@
-{ pkgs, lib, ... }:
 {
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
-    wineWowPackages.stable
-    wineWowPackages.waylandFull
+    inputs.nix-gaming.packages.${pkgs.system}.wine-ge
     winetricks
     bottles
   ];
