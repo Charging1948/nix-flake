@@ -1,8 +1,1 @@
-{
-  imports = [
-    ./direnv.nix
-    ./devenv.nix
-    ./just.nix
-    ./lunarvim.nix
-  ];
-}
+{imports = [./direnv.nix ./devenv.nix ./gh.nix ./just.nix ./lunarvim.nix];}
