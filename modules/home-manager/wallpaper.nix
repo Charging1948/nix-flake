@@ -15,7 +15,7 @@ in {
     };
 
     path = mkOption {
-      type = types.str;
+      type = types.path;
       default = let
         wallpaperPackage = inputs.nix-wallpaper.packages.${pkgs.system}.default.override {
           inherit (config.wallpaper) preset;
