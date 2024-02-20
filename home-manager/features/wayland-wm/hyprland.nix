@@ -82,8 +82,8 @@
         animate_mouse_windowdragging = false;
 
         # enable variable refresh rate (effective depending on hardware)
-        vfr = true;
-        vrr = 2;
+        # vfr = true;
+        # vrr = 2;
 
         close_special_on_empty = true;
         # Unfullscreen when opening something
