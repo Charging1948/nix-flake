@@ -24,8 +24,6 @@
       ];
     };
 
-    exec = ["${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper.path} --mode fill"];
-
     settings = with config.colorScheme.palette; {
       env = [
         "LIBVA_DRIVER_NAME,nvidia"
@@ -40,6 +38,9 @@
         "XDG_SESSION_DESKTOP,Hyprland"
         "WLR_NO_HARDWARE_CURSORS,1"
       ];
+
+      exec = ["${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper.path} --mode fill"];
+
       general = {
         gaps_in = 5;
         gaps_out = 5;
