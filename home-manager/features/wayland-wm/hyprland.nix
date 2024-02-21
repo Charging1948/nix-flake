@@ -30,7 +30,7 @@
         "GBM_BACKEND,nvidia-drm"
         "GDK_BACKEND,wayland,x11"
         "QT_QPA_PLATFORM,wayland;xcb"
-        # CLUTTER_BACKEND = "wayland"
+        "CLUTTER_BACKEND,wayland"
         "__VK_LAYER_NV_optimus,NVIDIA_only"
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"
         "XDG_CURRENT_DESKTOP,Hyprland"
@@ -195,11 +195,14 @@
           "SUPER,e,exec,${editor}"
           "SUPER,v,exec,${editor}"
           "SUPER,b,exec,${browser}"
+
           # Window management
           "SUPER,h,movefocus,l"
           "SUPER,j,movefocus,d"
           "SUPER,k,movefocus,u"
           "SUPER,l,movefocus,r"
+
+          "SUPER,q,killactive"
           # Volume
           ",XF86AudioMute,exec,${pactl} set-sink-mute @DEFAULT_SINK@ toggle"
           "SHIFT,XF86AudioMute,exec,${pactl} set-source-mute @DEFAULT_SOURCE@ toggle"
