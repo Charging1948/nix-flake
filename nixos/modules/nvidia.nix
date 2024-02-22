@@ -35,6 +35,14 @@
     glmark2
   ];
 
+  hardware.opengl = {
+    extraPackages = with pkgs; [nvidia-vaapi-driver intel-media-driver];
+    extraPackages32 = with pkgs.pkgsi686Linux; [
+      nvidia-vaapi-driver
+      intel-media-driver
+    ];
+  };
+
   services.xserver.displayManager.gdm = {wayland = true;};
 
   specialisation = {
