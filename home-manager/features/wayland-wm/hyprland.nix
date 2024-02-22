@@ -30,25 +30,23 @@
         "GBM_BACKEND,nvidia-drm"
         "GDK_BACKEND,wayland,x11"
         "QT_QPA_PLATFORM,wayland;xcb"
-        "CLUTTER_BACKEND,wayland"
+        # "CLUTTER_BACKEND,wayland"
         "__VK_LAYER_NV_optimus,NVIDIA_only"
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_TYPE,wayland"
         "XDG_SESSION_DESKTOP,Hyprland"
         "WLR_NO_HARDWARE_CURSORS,1"
-        # Set wlroots renderer to Vulkan to avoid flickering
-        "WLR_RENDERER,vulkan"
-        # General wayland environment variables
-        "XDG_SESSION_TYPE,wayland"
-        "QT_QPA_PLATFORM,wayland"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+        # TODO: Find a way to fix external monitor not working with this enabled
+        # # Set wlroots renderer to Vulkan to avoid flickering
+        # "WLR_RENDERER,vulkan"
         # Firefox wayland environment variable
         "MOZ_ENABLE_WAYLAND,1"
         "MOZ_USE_XINPUT2,1"
         # OpenGL Variables
         "__GL_GSYNC_ALLOWED,0"
-        "__GL_VRR_ALLOWED,0"
+        # "__GL_VRR_ALLOWED,0"
         # Xwayland compatibility
         "XWAYLAND_NO_GLAMOR,1"
       ];
@@ -96,8 +94,8 @@
         animate_mouse_windowdragging = false;
 
         # enable variable refresh rate (effective depending on hardware)
-        # vfr = true;
-        # vrr = 2;
+        vfr = true;
+        vrr = 2;
 
         close_special_on_empty = true;
         # Unfullscreen when opening something
