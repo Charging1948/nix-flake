@@ -37,6 +37,20 @@
         "XDG_SESSION_TYPE,wayland"
         "XDG_SESSION_DESKTOP,Hyprland"
         "WLR_NO_HARDWARE_CURSORS,1"
+        # Set wlroots renderer to Vulkan to avoid flickering
+        "WLR_RENDERER,vulkan"
+        # General wayland environment variables
+        "XDG_SESSION_TYPE,wayland"
+        "QT_QPA_PLATFORM,wayland"
+        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+        # Firefox wayland environment variable
+        "MOZ_ENABLE_WAYLAND,1"
+        "MOZ_USE_XINPUT2,1"
+        # OpenGL Variables
+        "__GL_GSYNC_ALLOWED,0"
+        "__GL_VRR_ALLOWED,0"
+        # Xwayland compatibility
+        "XWAYLAND_NO_GLAMOR,1"
       ];
 
       exec = ["${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper.path} --mode fill"];
