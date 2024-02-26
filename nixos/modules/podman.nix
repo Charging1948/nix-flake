@@ -4,6 +4,7 @@
     dockerCompat = true;
     dockerSocket.enable = true;
     defaultNetwork.settings.dns_enabled = true;
+    enableNvidia = true;
   };
 
   # Enable to run Podman Containers as systemd services
