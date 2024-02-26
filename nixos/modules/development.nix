@@ -21,7 +21,7 @@ in {
     inherit (pkgs.unstable) jetbrains;
   in
     with pkgs;
-      [gnumake insomnia]
+      [gnumake insomnia unstable.ollama]
       ++ map
       (pkgName:
         lib.attrByPath [pkgName] null jetbrains
