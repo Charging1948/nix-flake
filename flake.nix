@@ -59,6 +59,8 @@
       url = "github:marella/material-design-icons";
       flake = false;
     };
+
+    flake-templates.url = "github:mordragt/nix-templates";
   };
 
   outputs = {
