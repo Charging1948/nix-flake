@@ -5,7 +5,7 @@
 }: {
   programs.swaylock = {
     enable = true;
-    package = pkgs.swaylock-effects;
+    package = pkgs.unstable.swaylock-effects;
     settings = with config.colorScheme.palette; {
       effect-blur = "20x3";
       fade-in = 0.1;
