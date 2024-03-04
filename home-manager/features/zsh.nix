@@ -5,18 +5,12 @@
   home,
   ...
 }: {
-
   programs.zsh = {
     enable = true;
+    shellAliases = {fvim = "nix run github:charging1948/neovim";};
     syntaxHighlighting = {
       enable = true;
-      highlighters = [
-        "main"
-        "brackets"
-        "regexp"
-        "root"
-        "line"
-      ];
+      highlighters = ["main" "brackets" "regexp" "root" "line"];
     };
     enableAutosuggestions = true;
     oh-my-zsh = {
@@ -40,7 +34,6 @@
     };
   };
 
-
   home.packages = with pkgs; [
     fzf
     thefuck
@@ -50,6 +43,4 @@
     zoxide
     tmux-cssh
   ];
-
-
 }
