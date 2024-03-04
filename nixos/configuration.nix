@@ -14,7 +14,7 @@
     # outputs.nixosModules.example
 
     inputs.nix-gaming.nixosModules.steamCompat
-    inputs.nix-gaming.nixosModules.pipewireLowLatency
+    # inputs.nix-gaming.nixosModules.pipewireLowLatency
 
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
@@ -198,10 +198,10 @@
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
     jack.enable = true;
-    lowLatency = {
-      # enable this module
-      enable = true;
-    };
+    # lowLatency = {
+    #   # enable this module
+    #   enable = true;
+    # };
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
