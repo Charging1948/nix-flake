@@ -8,6 +8,16 @@
 
   services.geoclue2.enable = true;
 
+  hardware.opengl = {
+    extraPackages = with pkgs; [
+      intel-media-driver
+      vaapiIntel
+      vaapiVdpau
+      libvdpau-va-gl
+      mesa.drivers
+    ];
+  };
+
   environment.systemPackages = with pkgs.unstable; [keymapp wootility];
 
   users.users.jk.extraGroups = ["input"];
