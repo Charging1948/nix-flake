@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   services.cpupower-gui.enable = true;
   # hardware.fancontrol.enable = true;
 
@@ -18,7 +22,16 @@
     ];
   };
 
-  environment.systemPackages = with pkgs.unstable; [keymapp wootility];
+  environment.systemPackages = with pkgs.unstable;
+    [keymapp wootility]
+    ++ (with pkgs.nixgl; [
+      auto.nixGLDefault
+      auto.nixGLNvidia
+      auto.nixGLNvidiaBumblebee
+      nixGLIntel
+      auto.nixVulkanNvidia
+      nixVulkanIntel
+    ]);
 
   users.users.jk.extraGroups = ["input"];
 }

@@ -17,6 +17,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixgl.url = "github:nix-community/nixGL";
+
     devenv.url = "github:cachix/devenv";
 
     nix-gaming = {
