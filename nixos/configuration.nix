@@ -38,7 +38,7 @@
       outputs.overlays.unstable-packages
 
       inputs.nixpkgs-wayland.overlay
-      inputs.nixgl.overlay
+      inputs.hyprland.overlays.default
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
 
@@ -155,6 +155,8 @@
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    portalPackage =
+      inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
   };
 
   environment.sessionVariables = {

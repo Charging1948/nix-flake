@@ -19,19 +19,11 @@
       vaapiVdpau
       libvdpau-va-gl
       mesa.drivers
+      intel-compute-runtime
     ];
   };
 
-  environment.systemPackages = with pkgs.unstable;
-    [keymapp wootility]
-    ++ (with pkgs.nixgl; [
-      auto.nixGLDefault
-      auto.nixGLNvidia
-      auto.nixGLNvidiaBumblebee
-      nixGLIntel
-      auto.nixVulkanNvidia
-      nixVulkanIntel
-    ]);
+  environment.systemPackages = with pkgs.unstable; [keymapp wootility];
 
   users.users.jk.extraGroups = ["input"];
 }

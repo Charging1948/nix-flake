@@ -17,7 +17,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixgl.url = "github:nix-community/nixGL";
+    # nixgl.url = "github:nix-community/nixGL";
 
     devenv.url = "github:cachix/devenv";
 
@@ -34,12 +34,12 @@
 
     hyprland = {
       url = "github:hyprwm/hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     hyprwm-contrib = {
       url = "github:hyprwm/contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     hyprland-plugins = {
