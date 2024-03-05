@@ -1,6 +1,6 @@
 {
   services.gammastep = {
-    enable = false;
+    enable = true;
     provider = "geoclue2";
     temperature = {
       day = 6000;

@@ -5,10 +5,10 @@
 }: {
   programs.swaylock = {
     enable = true;
-    package = pkgs.unstable.swaylock-effects;
+    package = pkgs.unstable.swaylock;
     settings = with config.colorScheme.palette; {
       effect-blur = "20x3";
-      fade-in = 0.1;
+      fade-in = 0.2;
 
       # font = config.fontProfiles.regular.family;
       font-size = 15;
@@ -16,9 +16,9 @@
       line-uses-inside = true;
       disable-caps-lock-text = true;
       indicator-caps-lock = true;
-      indicator-radius = 80;
+      indicator-radius = 20;
       indicator-idle-visible = true;
-      indicator-y-position = 1000;
+      indicator-y-position = 1200;
 
       ring-color = "#${base02}";
       inside-wrong-color = "#${base08}";

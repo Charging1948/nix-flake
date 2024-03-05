@@ -31,6 +31,7 @@
 in {
   services.swayidle = {
     enable = true;
+    package = pkgs.unstable.swayidle;
     systemdTarget = "graphical-session.target";
     timeouts =
       # Lock screen
