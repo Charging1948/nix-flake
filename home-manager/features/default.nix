@@ -10,7 +10,6 @@
     ./lazygit.nix
     ./kdeconnect.nix
     ./mako.nix
-    ./mangohud.nix
     ./neovide.nix
     ./nvim.nix
     ./playerctld.nix
