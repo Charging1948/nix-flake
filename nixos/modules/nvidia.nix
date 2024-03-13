@@ -36,11 +36,8 @@
   ];
 
   hardware.opengl = {
-    extraPackages = with pkgs; [nvidia-vaapi-driver intel-media-driver];
-    extraPackages32 = with pkgs.pkgsi686Linux; [
-      nvidia-vaapi-driver
-      intel-media-driver
-    ];
+    extraPackages = with pkgs; [intel-media-driver];
+    extraPackages32 = with pkgs.pkgsi686Linux; [intel-media-driver];
   };
 
   services.xserver.displayManager.gdm = {wayland = true;};
