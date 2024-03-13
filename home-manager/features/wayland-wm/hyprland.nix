@@ -28,13 +28,14 @@
 
     settings = with config.colorScheme.palette; {
       env = [
-        "LIBVA_DRIVER_NAME,nvidia"
-        "GBM_BACKEND,nvidia-drm"
+        "LIBVA_DRIVER_NAME,iHD"
+        "VDPAU_DRIVER,va_gl"
+        # "GBM_BACKEND,nvidia-drm"
         "GDK_BACKEND,wayland,x11"
         "QT_QPA_PLATFORM,wayland;xcb"
         # "CLUTTER_BACKEND,wayland"
-        "__VK_LAYER_NV_optimus,NVIDIA_only"
-        "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+        # "__VK_LAYER_NV_optimus,NVIDIA_only"
+        # "__GLX_VENDOR_LIBRARY_NAME,nvidia"
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_TYPE,wayland"
         "XDG_SESSION_DESKTOP,Hyprland"
@@ -47,7 +48,7 @@
         "MOZ_ENABLE_WAYLAND,1"
         "MOZ_USE_XINPUT2,1"
         # OpenGL Variables
-        "__GL_GSYNC_ALLOWED,0"
+        # "__GL_GSYNC_ALLOWED,0"
         # "__GL_VRR_ALLOWED,0"
         # Xwayland compatibility
         "XWAYLAND_NO_GLAMOR,1"
