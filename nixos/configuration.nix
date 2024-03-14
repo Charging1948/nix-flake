@@ -13,7 +13,7 @@
     # If you want to use modules your own flake exports (from modules/nixos):
     # outputs.nixosModules.example
 
-    inputs.nix-gaming.nixosModules.steamCompat
+    # inputs.nix-gaming.nixosModules.steamCompat
     # inputs.nix-gaming.nixosModules.pipewireLowLatency
 
     # Or modules from other flakes (such as nixos-hardware):
