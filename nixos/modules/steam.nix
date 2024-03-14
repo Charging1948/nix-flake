@@ -24,7 +24,7 @@
         ];
     };
     gamescopeSession.enable = true;
-    extraCompatPackages = [inputs.nix-gaming.packages.${pkgs.system}.proton-ge];
+    # extraCompatPackages = [inputs.nix-gaming.packages.${pkgs.system}.proton-ge];
   };
   programs.gamemode = {enable = true;};
   programs.gamescope = {
