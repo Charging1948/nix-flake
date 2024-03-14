@@ -19,6 +19,8 @@
     trimmer
     x11-gestures
     pkgs.touchegg
+    pkgs.networkmanager-openconnect
+    pkgs.gnome.networkmanager-openconnect
   ];
   services.udev.packages = with pkgs; [gnome.gnome-settings-daemon];
 }
