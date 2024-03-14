@@ -145,6 +145,9 @@
         "Terminus"
       ];
     })
+    libre-caslon
+    liberation_ttf
+    libre-baskerville
   ];
 
   # Enable the X11 windowing system.
