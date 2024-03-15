@@ -38,7 +38,7 @@
       outputs.overlays.unstable-packages
 
       inputs.nixpkgs-wayland.overlay
-      inputs.hyprland.overlays.default
+      # inputs.hyprland.overlays.default
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
 
