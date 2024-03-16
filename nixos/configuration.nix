@@ -53,6 +53,8 @@
     config = {
       # Disable if you don't want unfree packages
       allowUnfree = true;
+      # TODO: Remove this once nixd has been rewritten
+      permittedInsecurePackages = ["nix-2.16.2"];
     };
   };
 
