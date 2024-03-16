@@ -1,1 +1,1 @@
-{ pkgs, ... }: { home.packages = with pkgs.unstable; [ neovide ]; }
+{pkgs, ...}: {home.packages = with pkgs.unstable; [neovide];}

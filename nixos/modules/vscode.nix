@@ -1,17 +1,20 @@
-{ pkgs, inputs, ... }:
-let
+{
+  pkgs,
+  inputs,
+  ...
+}: let
   extensions = inputs.nix-vscode-extensions.extensions.${pkgs.system};
 in {
   environment.systemPackages = with pkgs; [
     (vscode-with-extensions.override {
-      vscode = (pkgs.vscode.override { isInsiders = true; }).overrideAttrs (oldAttrs: rec {
-        src = (builtins.fetchTarball {
+      vscode = (pkgs.vscode.override {isInsiders = true;}).overrideAttrs (oldAttrs: rec {
+        src = builtins.fetchTarball {
           url = "https://code.visualstudio.com/sha/download?build=insider&os=linux-x64";
           sha256 = "0rxd85xgwyszjjziniby867xzrg7mqx81nq7np9j2kdvkhaf992y";
-        });
+        };
         version = "latest";
 
-        buildInputs = oldAttrs.buildInputs ++ [ pkgs.krb5 ];
+        buildInputs = oldAttrs.buildInputs ++ [pkgs.krb5];
       });
       vscodeExtensions = with extensions; [
         open-vsx.asvetliakov.vscode-neovim
