@@ -48,8 +48,7 @@
     };
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-
-    neovim-flake.url = "github:Charging1948/neovim";
+    neovim-flake.url = "github:Charging1948/neovim/0065e47492bd47808ebc358d7f242d6632e34ee9";
     tmux-flake.url = "github:Charging1948/tmux";
 
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
