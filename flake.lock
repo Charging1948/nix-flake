@@ -837,17 +837,16 @@
         "snowfall-lib": "snowfall-lib"
       },
       "locked": {
-        "lastModified": 1709732462,
-        "narHash": "sha256-pCn6yU3S3bhxlkJSjv/UH7dDG+QaqxiJSn7uPycf3rE=",
+        "lastModified": 1710609596,
+        "narHash": "sha256-m6YMqjm22ma/lExB1JW+B0SS+xY0+W6BfUChbCeXgdA=",
         "owner": "Charging1948",
         "repo": "neovim",
-        "rev": "0065e47492bd47808ebc358d7f242d6632e34ee9",
+        "rev": "d77699a2552e300fa180cfeb3b54e083813a39e2",
         "type": "github"
       },
       "original": {
         "owner": "Charging1948",
         "repo": "neovim",
-        "rev": "0065e47492bd47808ebc358d7f242d6632e34ee9",
         "type": "github"
       }
     },
