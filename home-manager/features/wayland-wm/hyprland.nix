@@ -13,9 +13,9 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    # package = inputs.hyprland.packages.${pkgs.system}.hyprland.override {
-    #   enableXWayland = true;
-    # };
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland.override {
+      enableXWayland = true;
+    };
     xwayland.enable = true;
     systemd = {
       enable = true;
