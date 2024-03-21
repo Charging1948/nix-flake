@@ -13,6 +13,7 @@
       "rider"
       "idea-ultimate"
       "goland"
+      "datagrip"
     ];
     extensions = ["ideavim" "github-copilot"];
   };
