@@ -3,7 +3,5 @@
   pkgs,
   ...
 }: {
-  home.packages = [
-    inputs.devenv.packages.${pkgs.system}.devenv
-  ];
+  home.packages = [inputs.devenv.packages.${pkgs.system}.devenv];
 }
