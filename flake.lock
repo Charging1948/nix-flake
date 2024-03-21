@@ -49,11 +49,11 @@
         "pre-commit-hooks": "pre-commit-hooks_2"
       },
       "locked": {
-        "lastModified": 1711009488,
-        "narHash": "sha256-P7HLXn+yQflLjhj+B1yHOEyjfeDq5nub0d6GDgWMgYw=",
+        "lastModified": 1711019207,
+        "narHash": "sha256-9LnGe0KWqXj18IV+A1panzXQuTamrH/QcasaqnuqiE0=",
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "89fa20aaf751e154f7a0c7fbcbd8491a13397778",
+        "rev": "a7ba6766c0cc351b8656c63560c6b19c3788455f",
         "type": "github"
       },
       "original": {
@@ -1000,11 +1000,11 @@
         "snowfall-lib": "snowfall-lib"
       },
       "locked": {
-        "lastModified": 1711012730,
-        "narHash": "sha256-5r2X7rEx8NJaOEK5mIWKGiOjGDudVcFksS1PgDjMyuY=",
+        "lastModified": 1711015041,
+        "narHash": "sha256-5t/HZK48hYwtv64SotQoyunme5n1OpeIlMY8uUxThNQ=",
         "owner": "Charging1948",
         "repo": "neovim",
-        "rev": "ee40f3bf5dd94511756668bf6a88f1734c2a42a5",
+        "rev": "37f586fa10ae5f0cd99fc4df732d56a962a45658",
         "type": "github"
       },
       "original": {
@@ -1526,11 +1526,11 @@
     },
     "nixpkgs_7": {
       "locked": {
-        "lastModified": 1710838473,
-        "narHash": "sha256-RLvwdQSENKOaLdKhNie8XqHmTXzNm00/M/THj6zplQo=",
+        "lastModified": 1710951922,
+        "narHash": "sha256-FOOBJ3DQenLpTNdxMHR2CpGZmYuctb92gF0lpiirZ30=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "fa9f817df522ac294016af3d40ccff82f5fd3a63",
+        "rev": "f091af045dff8347d66d186a62d42aceff159456",
         "type": "github"
       },
       "original": {
