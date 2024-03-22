@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   virtualisation.podman = {
     enable = true;
     dockerCompat = true;
@@ -6,6 +6,9 @@
     defaultNetwork.settings.dns_enabled = true;
     enableNvidia = true;
   };
+
+  environment.systemPackages = with pkgs; [podman-compose];
+  environment.shellAliases = {"docker-compose" = "podman-compose";};
 
   # Enable to run Podman Containers as systemd services
   # virtualisation.oci-containers.backend = "podman";
