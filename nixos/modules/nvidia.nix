@@ -38,7 +38,7 @@
     extraPackages32 = with pkgs.pkgsi686Linux; [intel-media-driver];
   };
 
-  servicesAlmost.xserver.displayManager.gdm = {wayland = true;};
+  services.xserver.displayManager.gdm = {wayland = true;};
 
   specialisation = {
     # Enable Sync Mode for maximum performance
@@ -62,11 +62,9 @@
     on-the-go.configuration = {
       system.nixos.tags = ["on-the-go"];
       imports = with inputs.nixos-hardware.nixosModules; [common-gpu-nvidia-disable];
-      services.thermald.enable = lib.mkForce true;
       hardware.nvidia.prime = with lib; {
         offload.enable = mkForce false;
         offload.enableOffloadCmd = mkForce false;
-        reverseSync.enable = mkForce false;
         sync.enable = mkForce false;
       };
     };
