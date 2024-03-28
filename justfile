@@ -9,5 +9,5 @@ update-nvim:
   git add flake.lock
   git commit -m "neovim: update to latest version"
 
-rebuild system="protean":
-  sudo nixos-rebuild --flake ".#{{system}}" switch
+rebuild system="protean" method="switch":
+  sudo nixos-rebuild --flake ".#{{system}}" {{method}}
