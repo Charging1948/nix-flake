@@ -41,7 +41,10 @@
     fsType = "ext4";
   };
 
-  boot.kernelParams = ["nvidia.NVreg_PreserveVideoMemoryAllocations=1"];
+  boot.kernelParams = [
+    "nvme_core.default_ps_max_latency_us=0"
+    "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+  ];
 
   swapDevices = [];
 
