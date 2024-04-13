@@ -10,4 +10,4 @@ update-nvim:
   git commit -m "neovim: update to latest version"
 
 rebuild system="protean" method="switch":
-  sudo nixos-rebuild --flake ".#{{system}}" {{method}}
+  sudo nixos-rebuild --fast --flake ".#{{system}}" {{method}}
