@@ -42,7 +42,7 @@
   };
 
   boot.kernelParams = [
-    "nvme_core.default_ps_max_latency_us=0"
+    "nvme_core.default_ps_max_latency_us=2000"
     "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
   ];
 
